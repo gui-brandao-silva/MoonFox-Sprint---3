@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="shortcut icon" href="https://image.flaticon.com/icons/png/512/778/778099.png" type="./assests/image/">
+
+    <link rel="stylesheet" href="css/style-dash.css">
+    <link rel="stylesheet" href="./css/estilo-dash.css">
+    <link rel="stylesheet" href="style_global.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+   
+    <div class="header">
+        <div class="container">
+            <a href="./index.html">
+                <img style="height: 140px; margin:3px;" src="Assets/images/MoonFox Versão v4.png" >
+            </a>
+                 <div class="navbar"></div>
+                    <ul class="navbar">
+               
+                        <header>
+                            <nav class="menu">
+                                <ul>
+                                    <li><a href="./index.html">Inicio</a></li>
+                                    <li>|</li>
+                                    <li><a href="./simulador.html">Simulador</a></li>
+                                    <li><a href="./login.html">Login</a></li>
+                                    <li class="selecionado" ><a href="./cadastro_global.html">Cadastro</a></li><br>
+                                </ul>
+                            </nav>
+                        </header>
+
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <header>
+                    <nav class="menu">
+                        <ul>
+                            <li><a href="./dashboard.HTML">Ender i3</a></li>
+                            <li><a href="./dashboard.HTML">Gama Pro</a></li>
+                            <li><a href="./dashboard.HTML">Gama Pro MK2</a></li>
+                            
+                        </ul>
+                    </nav>
+                </header>
+
+   
+<div class="dash-container">
+
+
+    
+
+                <div class="grouf">
+                    <span id="bem-vindo" > <b id="bem-vindo" >Bem vindo </b>  a sua Dashboard <b id="nomeC" > Brandão</b> <br><br>A temperatura atual da sua impressora é <span id="span_temp" > 33</span>°C. </span>  
+
+                    </div>
+                
+                
+                <div class="graf">
+                    <canvas id="myChart" width="100%" height="40%"></canvas>
+                </div>
+
+                <div class="arrumarGrif" >
+                <div class="grif">
+                    <div id="cont_9cc8fd19de7707bda410d82161066b6f"><script type="text/javascript" async src="https://www.tempo.com/wid_loader/9cc8fd19de7707bda410d82161066b6f"></script></div><br>
+                
+                   </div>
+                
+                </div>
+
+                
+                <div class="graf">
+                    <canvas id="myChart3" width="100%" height="40%"></canvas>
+                </div>
+
+
+                
+                <div class="graf">
+                   
+
+                    <canvas id="myChart2" width="100%" height="40%"></canvas>
+                </div>
+
+               
+
+
+                
+    </div>
+
+
+  
+         
+      </div>
+    </body>
+    
+    </html>
+    
+    <script>
+
+        var pico = (Math.random()*4 +  28 ).toFixed(1);
+        var ideal = (Math.random()*4 + 20 ).toFixed(1);
+        var min = (Math.random()*5 + 15 ).toFixed(1)
+    
+      var aleatorio =  (Math.random() * 20 + 15).toFixed(1);
+      var aleatorio2 = (Math.random() * 20 + 15).toFixed(1);
+      var aleatorio3 = (Math.random() * 20 + 15).toFixed(1);
+      var aleatorio4 = (Math.random() * 20 + 15).toFixed(1);
+      var aleatorio5 = (Math.random() * 20 + 15).toFixed(1);
+      var aleatorio6 = (Math.random() * 20 + 15).toFixed(1);
+
+      (Math.random()*2+20).toFixed(1);
+
+
+
+    
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: [`${10} minutos`,`${20} minutos`,`${30} minutos`,`${40} minutos`,`${50} minutos`],
+              datasets: [
+                  {
+                    label: 'Temperatura',
+                    data: [aleatorio, aleatorio2, aleatorio3, aleatorio4, aleatorio5, aleatorio6],
+                    backgroundColor: [
+                        'rgba(0,0,255,1)',
+                        
+                    ],
+                    
+                    borderWidth: 1,
+                    borderColor: 'rgba(0,0,255,1)'
+                    
+                },
+                {
+                    label: 'temperatura no dia',
+                    data: [  (Math.random()*2+20).toFixed(1) , (Math.random()*2+20).toFixed(1), (Math.random()*2+20).toFixed(1), (Math.random()*2+20).toFixed(1),
+                     (Math.random()*2+20).toFixed(1), (Math.random()*2+20).toFixed(1)],
+                    backgroundColor: [
+                        'rgba(255,140,0,0.9)',
+                    ],
+                    
+                    borderWidth: 5,
+                    borderColor: 'rgba(255,140,0,0.9)',
+                    type: 'bar'
+                }
+            ]
+          },
+          
+      });
+
+
+
+
+      var ctx = document.getElementById('myChart2').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ['Pico de temperatura', 'temperatura atual ', 'menor temperatura'],
+              datasets: [
+                  {
+                    label: 'Temperatura',
+                    data: [pico, ideal, min,],
+                    backgroundColor: [
+                        'rgb(255,0,0,0.8)',
+                        'rgb(0,128,0,0.8)',
+                        'rgb(100,149,237,0.8)'
+                    ],
+                    
+                    borderWidth: 3
+                   
+                }]
+          },
+          
+          options: {
+              indexAxis : 'y',
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+
+
+
+
+
+var ctx = document.getElementById('myChart3').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ['PLA', 'ABS'],
+              datasets: [
+                  {
+                    label: 'Metros restantes',
+                    data: [aleatorio, aleatorio2],
+                    backgroundColor: [
+                        'rgba(153,51,153,0.8)',
+                        'rgb(128,128,128,0.8)'
+                        
+                    ],
+                    
+                    borderWidth: 3
+                   
+                }]
+          },
+          
+          options: {
+              indexAxis : 'y',
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+
+
+
+
+
+
+
+var nome = localStorage.getItem('nome') 
+
+nomeC.innerHTML =  `${nome} `
+span_temp.innerHTML = ` ${ideal} `
+
+
+
+
+
+   
+
+
+     
+      
+      </script>
+

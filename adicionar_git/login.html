@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style_global.css">
+    <link rel="stylesheet" href="./CSS/style_login.CSS">
+    <link rel="shortcut icon" href="./Assets/images/logo_redondo.png" type="./assests/image/">
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="container-outro">
+            <a href="./index.html">
+                <img style="height: 140px; margin:3px;" src="./Assets/images/MoonFox Versão v4.png" >
+            </a>
+
+                    <ul class="navbar">
+                    
+                        <header>
+                            <nav class="menu">
+                                <ul>
+                                    <li><a href="./index.html">Inicio</a></li>
+                                    <li>|</li>
+                                    <li><a href="./simulador.html">Simulador</a></li>
+                                    <li class="selecionado" ><a href="./login.html">Login</a></li>
+                                    <li><a href="./cadastro_global.html">Cadastro</a></li><br>
+                                </ul>
+                            </nav>
+                        </header>
+
+                    </ul>
+                </div>
+        </div>
+
+        
+        <div class="banner-login">
+            <div class="container-outro">
+                <div class="card medio">
+                    <a href="./index.html">
+                        <img style="height: 145px; margin:3px;" src="Assets/images/MoonFox_Versao_v4-removebg-preview-preto.png" >
+                    </a>
+                    <b style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Login:</b><br/>
+                    <div class="formulario">
+                        <form id="form_login" method="post" onsubmit="return entrar()">
+                            E-mail:
+                            <input id="email_login" name="email" type="text" placeholder="Login">
+                            <br>
+                            Senha:
+                            <input id="senha_login" name="senha" type="password" placeholder="******">
+                            <br>
+                            <button onclick="logar()" class="btn" type="button">
+                                Entrar
+                            </button>
+                            <br/>
+                            <a href="">Esqueceu a senha ?</a> 
+                            <br/>
+                            Não possui um cadastro? <a href="./cadastro_global.html"> Junte-se agora! </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container-outro">
+                <h4>@ Todos os direitos reservado pela empresa MOONFOX.</h4>
+            </div>
+        </div>
+
+        </body>
+        </html>
+        <script>
+            function comprar() {
+                window.location.href = "./login.html"
+    
+            }
+
+
+            function logar() {
+            
+               var nome = localStorage.getItem('nome') 
+               var email = localStorage.getItem('email')
+               var senha = localStorage.getItem('senha')
+            
+               if (email_login.value == email && senha_login.value == senha) {
+            
+                   alert(`Olá bem vindo ${nome}` )
+                   window.location.href = "./dashboard.html"
+                   
+               }
+            
+               else{
+                   alert('email ou senha errado')
+               }
+                
+            }
+       
+            </script>
+            
