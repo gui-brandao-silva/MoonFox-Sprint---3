@@ -189,30 +189,7 @@ if (dias_trabalhados > 7) {
 function recalcula() {
     
 
-    resultado.innerHTML = ` <div id="card-calc">
-                                    <span>Material utilizado:</span> <br>
-                                    <select id="sel_material">
-                                        <option value="selecione">Selecione seu tipo de material </option>
-                                        <option value="pla">PLA</option>
-                                        <option value="abs">ABS</option>
-                                    </select>
-                                    <br/><br>
-                                   <span> quantidade diária de quilos:</span> <br>
-                                    <input id="ipt_quilos" type="text" placeholder="quilos trabalhados por dia" >
-                                    <br/><br>
-                                    <span>Tempo de operação diário:</span>  <br>
-                                    <input id="ipt_operacao" type="text" placeholder="Tempo de Operação">
-                                    <br/><br>
-                                     <span>Faturamento Diário: </span>  <br>
-                                    <input id="ipt_faturamento" type="text" placeholder="faturamento Diário">
-                                    <br/><br>
-                                     <span>dias trabalhados por semana:</span>  <br>
-                                    <input id="ipt_diastrab" type="text" placeholder="dias por semana">
-                                    <br/>
-                            
-                                    <button onclick="calcular()" class="btn">Calcular</button> <br>
-                        </div> 
-              `
+    location.reload(resultado.value);
     bt_recalc.style.display = 'none'
 
     limpavar()
