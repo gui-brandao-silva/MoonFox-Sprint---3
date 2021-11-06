@@ -5,12 +5,14 @@ body {
     margin:0;
     background-color: #0C0F0F;
     overflow-x: hidden;
+    color: #FF5100;
   }
   
   .container-outro {
     width: 80%;
     margin: 0 auto;
   }
+  
   .header {
   color: white;
   border-bottom: 2.5px solid #FF5100;
@@ -48,7 +50,7 @@ justify-content: space-between;
 }
 
   .menu ul li a {
-   color: #fff;
+   color: #FF5100;
    text-decoration: none;
    padding: 5px 20px;
    text-transform: uppercase;
@@ -58,7 +60,7 @@ justify-content: space-between;
 
 .menu ul li.ativo a {
 	background-color: #ffff;
-	color: #000;
+	color: #FF5100;
 }
 
 .menu ul li a:hover {
@@ -135,7 +137,7 @@ border: transparent;
 
  .social {
 
- background-color: #d5caca;
+ background-color: #000000;
   padding: 50px 0; 
  }
 
@@ -152,19 +154,18 @@ border: transparent;
  justify-content: center;
  margin-bottom: 50px;
 
- 
 
  }
  .social h2{
 
  display: flex;
  padding: 20px;
- background-color:grey;
+ background-color:#FF5100;
  border-radius: 20px;
  align-self: center;
  justify-self: center;
  text-align: center;
- color: #e60004;
+ color: #000000;
  margin: 0;
  
 }
@@ -228,12 +229,18 @@ border: transparent;
 }
 
 .footer .container-outro {
-
 display: flex;
 justify-content: center;
 align-items: center;
 text-decoration: none;
 }
+
+.footer .container-outro1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  }
 
  /* Header */
 .h4 {
@@ -243,7 +250,7 @@ text-decoration: none;
 
 a:visited {
  
-  color: grey
+  color: rgb(0, 0, 0)
 
 }
 
@@ -261,7 +268,7 @@ a:active{
 /* Login e cadastro e calculadora */
 
 .banner-login {
-  color: #0C0F0F;
+  color: #bb5a00;
   height:   95vh;
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("");
   background-repeat: no-repeat;
@@ -279,7 +286,7 @@ a:active{
 }
 
 .banner-login .cards {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   height: 80vh;
   width: 400px;
   display: flex;
@@ -381,12 +388,12 @@ h2{
 
 .gallery .control-button {
   color: #ccc;
-  color: rgba(255, 255, 255, 0.4);
+  color: #FF5100;
 }
 
 .gallery .control-button:hover {
   color: white;
-  color: rgba(255, 255, 255, 0.8);
+  color: #FF5100;
 }
 
 
