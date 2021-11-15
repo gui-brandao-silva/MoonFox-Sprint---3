@@ -133,7 +133,9 @@ var myChart = new Chart(ctx, {
             y: {
                 beginAtZero: true
             }
-        }
+        },
+        maintainAspectRatio: false
+
     }
 });
 
@@ -210,9 +212,18 @@ var ctx = document.getElementById('myChart').getContext('2d');
                 }
             ]
           },
-          
-      });
 
+          
+          options: {
+        
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        maintainAspectRatio: false
+    }
+});
 
 
 
