@@ -70,7 +70,7 @@
                
                 
                 <div class="graf_principal">
-                    <canvas id="myChart" width="0.5" height="0.5"></canvas
+                    <canvas id="myChart" width="0" height="0"></canvas
                 </div>
 
                 
@@ -140,9 +140,9 @@ var myChart = new Chart(ctx, {
 
 var ctx = document.getElementById('myChart2bar2').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
-        labels: ['rock', 'pop', 'rap', 'funk', 'gospel', 'MPB'],
+        labels: ['rock', 'pop', 'rap', 'funk'],
         datasets: [{
             label: 'genero musical',
             data: [aleatorio, aleatorio2, aleatorio3, aleatorio4, aleatorio5, aleatorio6],
@@ -171,7 +171,8 @@ var myChart = new Chart(ctx, {
             y: {
                 beginAtZero: true
             }
-        }
+        },
+        maintainAspectRatio: false
     }
 });
 
