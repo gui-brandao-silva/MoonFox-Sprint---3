@@ -64,14 +64,15 @@
                 </div>
                 
                 <div class="grif">
+                    <canvas id="myChartbar1" width="0.5" height="0.5"></canvas>
                    
                 </div>
                 <div class="graf">
-                    <canvas id="myChartbar1" width="0.5" height="0.5"></canvas>
+                    <canvas id="myChart2bar2" width="0.5" height="0.5"></canvas>
                 </div>   
                 
                 <div class="graf_principal">
-                    <canvas id="myChartbar1" width="0.5" height="0.5"></canvas>
+                    <canvas id="myChart" width="0" height="0"></canvas
                 </div>
 
                 
@@ -134,16 +135,18 @@ var myChart = new Chart(ctx, {
             y: {
                 beginAtZero: true
             }
-        }
+        },
+        maintainAspectRatio: false
+
     }
 });
 
 
 var ctx = document.getElementById('myChart2bar2').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
-        labels: ['rock', 'pop', 'rap', 'funk', 'gospel', 'MPB'],
+        labels: ['rock', 'pop', 'rap', 'funk'],
         datasets: [{
             label: 'genero musical',
             data: [aleatorio, aleatorio2, aleatorio3, aleatorio4, aleatorio5, aleatorio6],
@@ -172,10 +175,57 @@ var myChart = new Chart(ctx, {
             y: {
                 beginAtZero: true
             }
-        }
+        },
+        maintainAspectRatio: false
     }
 });
 
+
+
+var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: [`${10} minutos`,`${20} minutos`,`${30} minutos`,`${40} minutos`,`${50} minutos`],
+              datasets: [
+                  {
+                    label: 'Temperatura',
+                    data: [aleatorio, aleatorio2, aleatorio3, aleatorio4, aleatorio5, aleatorio6],
+                    backgroundColor: [
+                        'rgba(0,0,255,1)',
+                        
+                    ],
+                    
+                    borderWidth: 1,
+                    borderColor: 'rgba(0,0,255,1)'
+                    
+                },
+                {
+                    label: 'temperatura no dia',
+                    data: [  (Math.random()*2+20).toFixed(1) , (Math.random()*2+20).toFixed(1), (Math.random()*2+20).toFixed(1), (Math.random()*2+20).toFixed(1),
+                     (Math.random()*2+20).toFixed(1), (Math.random()*2+20).toFixed(1)],
+                    backgroundColor: [
+                        'rgba(255,140,0,0.9)',
+                    ],
+                    
+                    borderWidth: 5,
+                    borderColor: 'rgba(255,140,0,0.9)',
+                    type: 'bar'
+                }
+            ]
+          },
+
+          
+          options: {
+        
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        maintainAspectRatio: false
+    }
+});
 
 
 
