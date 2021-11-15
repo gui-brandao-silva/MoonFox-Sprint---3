@@ -93,19 +93,16 @@ border: transparent;
 }
 
 .video{
-  background-color: black;
-}
-
-.beneficios{
   background-color: #0C0F0F;
 }
 
-.txt{
-
+.beneficios{
+  background-color: #000000;
 }
 
+
  .principal{
-   background-color: #000000;
+   background-color: #0C0F0F;
  }
 
 .spacing {
@@ -233,7 +230,7 @@ border: transparent;
   align-items: flex-start;
   background-color: #0C0F0F;
  }
- 
+
  .social .txt1{
   display: flex;
   flex-wrap: wrap;
