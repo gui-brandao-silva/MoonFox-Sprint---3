@@ -260,12 +260,14 @@ select {
 
 
 .graf {
+  position: absolute;
   background-color: rgba(255,255,255,0.05);
-  width: 32%;
-  height: 28vh;
+  width: 20%;
+  height: 33vh;
   margin: 10px;
   padding: 5px;
-  float: left;
+  left: 30%;
+  top: 41.5%;
 }
 
 
@@ -273,8 +275,6 @@ select {
 
   display: flex; 
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; 
   margin-top: 115px;
   margin-bottom: 2%;
 }
@@ -310,13 +310,14 @@ font-weight: 600;
 }
 
 .grif{
-  display: flex;
- background-color: rgba(255,255,255,0.05);
-  width: 10%;
-  height: 25vh;
-  margin-left: 17%;
-  margin-top: 15%;
-  
+  position: absolute;
+  background-color: rgba(255,255,255,0.05);
+  width: 20%;
+  height: 33vh;
+  margin: 10px;
+  padding: 5px;
+  left: 30%;
+  top: 81%;
 
 }
 
@@ -427,23 +428,22 @@ nav {
 
 .graf_principal {
   height: 75vh;
-  width: 20vw;
-  
-  display: flex;
-  justify-content: space-around;
-  background-color: rgba(255,255,255,0.05);
+    width: 30vw;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255,255,255,0.05);
 }
 
 .quartil {
   height: 75vh;
-  width: 16vw;
-  
+  width: 12vw;
+  margin-right: 30%;
   display: flex;
   justify-content: space-around;
   background-color: rgba(255,255,255,0.05);
 }
 
 .alinhamento_graf {
-  text-align: center;
-  width: 30vw;
+
+  width: 80vw;
 }
