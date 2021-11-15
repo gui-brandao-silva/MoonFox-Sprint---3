@@ -447,3 +447,53 @@ nav {
 
   width: 80vw;
 }
+
+.quartil_vermelho {
+  background-color: #d40004;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    width: 130px;
+    height: 12%;
+    position: absolute;
+}
+
+.quartil_amarelo {
+  background-color: #f7f303;
+    display: flex;
+    justify-content: center;
+    margin-top: 116px;
+    width: 130px;
+    height: 12%;
+    position: absolute;
+  }
+
+  .quartil_verde {
+    background-color: #2cf703;
+      display: flex;
+      justify-content: center;
+      margin-top: 200px;
+      width: 130px;
+      height: 12%;
+      position: absolute;
+    }
+
+    .quartil_ciano {
+      background-color: #03f7eb;
+        display: flex;
+        justify-content: center;
+        margin-top: 285px;
+        width: 130px;
+        height: 12%;
+        position: absolute;
+      }
+
+      .quartil_azul {
+        background-color: #0012af;
+          display: flex;
+          justify-content: center;
+          margin-top: 370px;
+          width: 130px;
+          height: 12%;
+          position: absolute;
+        }
