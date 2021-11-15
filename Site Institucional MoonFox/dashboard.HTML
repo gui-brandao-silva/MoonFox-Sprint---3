@@ -60,13 +60,16 @@
 
                 
                 <div class="grif">
+                   
                 </div>
                 <div class="graf">
+                    <canvas id="myChartbar1" width="0.5" height="0.5"></canvas>
                 </div>   
            
                
                 
                 <div class="graf_principal">
+                    <canvas id="myChartbar1" width="0.5" height="0.5"></canvas>
                 </div>
 
                 
@@ -97,29 +100,34 @@
     
 
 
-
-      var ctx = document.getElementById('myChart2').getContext('2d');
-      var myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-              labels: ['Pico de temperatura', 'temperatura atual ', 'menor temperatura'],
-              datasets: [
-                  {
-                    label: 'Temperatura',
-                    data: [pico, ideal, min,],
-                    backgroundColor: [
-                        'rgb(255,0,0,0.8)',
-                        'rgb(0,128,0,0.8)',
-                        'rgb(100,149,237,0.8)'
-                    ],
-                    
-                    borderWidth: 3
-                   
-                }]
-          },
-          
-          options: {
-              indexAxis : 'y',
+var ctx = document.getElementById('myChartbar1').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['felicidade', 'paixão', 'paz', 'motivação'],
+        datasets: [{
+            label: 'emoções',
+            data: [aleatorio,aleatorio2, aleatorio3, aleatorio4],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 3
+        }]
+    },
+    options: {
         scales: {
             y: {
                 beginAtZero: true
@@ -129,33 +137,35 @@
 });
 
 
-
-
-
-
-
-var ctx = document.getElementById('myChart3').getContext('2d');
-      var myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-              labels: ['PLA', 'ABS'],
-              datasets: [
-                  {
-                    label: 'Metros restantes',
-                    data: [aleatorio, aleatorio2],
-                    backgroundColor: [
-                        'rgba(153,51,153,0.8)',
-                        'rgb(128,128,128,0.8)'
-                        
-                    ],
-                    
-                    borderWidth: 3
-                   
-                }]
-          },
-          
-          options: {
-              indexAxis : 'y',
+var ctx = document.getElementById('myChart2bar2').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['rock', 'pop', 'rap', 'funk', 'gospel', 'MPB'],
+        datasets: [{
+            label: 'genero musical',
+            data: [aleatorio, aleatorio2, aleatorio3, aleatorio4, aleatorio5, aleatorio6],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 3
+        }]
+    },
+    options: {
+        
         scales: {
             y: {
                 beginAtZero: true
@@ -164,18 +174,6 @@ var ctx = document.getElementById('myChart3').getContext('2d');
     }
 });
 
-
-
-
-
-
-
-
-
-var nome = localStorage.getItem('nome') 
-
-nomeC.innerHTML =  `${nome} `
-span_temp.innerHTML = ` ${ideal} `
 
 
 
