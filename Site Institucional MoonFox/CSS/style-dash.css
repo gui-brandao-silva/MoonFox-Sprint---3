@@ -262,11 +262,12 @@ select {
 .graf {
   display: flex;
   justify-content: space-around;
- background-color: rgba(255,255,255,0.05);
-  width: 45%;
-  height: 35vh;
+  background-color: rgba(255,255,255,0.05);
+  width: 32%;
+  height: 28vh;
   margin: 10px;
   padding: 5px;
+  float: left;
 }
 
 
@@ -277,6 +278,7 @@ select {
   align-items: center;
   flex-wrap: wrap; 
   margin-top: 115px;
+  margin-bottom: 2%;
 }
 
 
@@ -425,4 +427,25 @@ nav {
 }
 
 
+.graf_principal {
+  height: 75vh;
+  width: 20vw;
+  
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255,255,255,0.05);
+}
 
+.quartil {
+  height: 75vh;
+  width: 16vw;
+  
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255,255,255,0.05);
+}
+
+.alinhamento_graf {
+  text-align: center;
+  width: 30vw;
+}
