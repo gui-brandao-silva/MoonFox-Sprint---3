@@ -1,0 +1,71 @@
+
+--TABELA EMPRESA--
+create table tb_Empresa (
+id_empresa int primary key identity(10,1),
+Nome_Empresa varchar(45),
+CNPJ_CPF varchar(14),
+EndereçoCliente varchar(45),
+CEP varchar(45),
+Data_abertura date
+);
+select*from empresa;
+
+--TABELA FILIAIS--
+create table tbs_filiais (
+id_filiais int identity(20,1),
+NomeFilial varchar(45),
+Quantidade_de_Salas int,
+CEP_filial varchar(45),
+PRIMARY KEY (`id_filiais`, `fk_empresa`),
+fk_empresa int foreign key references tb_Empresa (id_empresa)
+);
+select * from tb_filiais;
+
+--TABELA USUARIO--
+create table tb_Usuario(
+id_usuario int PRIMARY KEY identity(30,1),
+Nome varchar(45),
+Email varchar(45),
+Senha varchar(45)
+);
+select * from tb_usuario;
+
+--TABELA ACESSO--
+create table tb_acesso (
+id_acesso int identity(40,1),
+fk_usuarios int foreign key references tb_Usuario (id_usuario),	
+fk_filiais int foreign key references tbs_filiais (id_filiais),
+primary key (`id_acesso`, `fk_usuarios`)
+)identity(1,10) = 60;
+select * from tb_acesso;
+
+
+--TABELA IMPRESSORA--
+create table tb_impressora (
+id_impressora int primary key identity(50,1),
+ModeloImpressora varchar(45),
+Filamento varchar (3),
+check( Filamento = 'ABS' or Filamento = 'PLA'),
+Altura_Z decimal (10,2),
+Largura_X decimal (10,2),
+profundidade_Y decimal (10,2),
+fk_filiais int foreign key references tbs_filiais (id_filiais)
+);
+select * from tbs_impressora;
+
+--TABELA SENSOR--
+create table tb_sensor(
+id_sensor int primary key identity(60,1),
+fk_impressora int foreign key references tb_impressora (id_impressora)
+);
+select * from sensor;
+
+--TABELA REGISTROS--
+create table tb_registros(
+id_registro int identity(70,1),
+primary key (`id_registro`,`fk_sensor`),
+fk_sensor int foreign key references tb_sensor (id_sensor),	
+Temperatura_Atual decimal (10,2)
+);
+select * from tb_registros;
+
