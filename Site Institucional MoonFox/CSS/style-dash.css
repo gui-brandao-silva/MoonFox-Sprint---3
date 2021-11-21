@@ -444,12 +444,11 @@ nav {
 }
 
 .alinhamento_graf {
-
   width: 80vw;
 }
 
 .quartil_vermelho {
-  background-color: #d40004;
+  background-color: #850508;
     display: flex;
     justify-content: center;
     margin-top: 32px;
@@ -459,7 +458,7 @@ nav {
 }
 
 .quartil_amarelo {
-  background-color: #f7f303;
+  background-color: #b4b105;
     display: flex;
     justify-content: center;
     margin-top: 116px;
@@ -469,7 +468,7 @@ nav {
   }
 
   .quartil_verde {
-    background-color: #2cf703;
+    background-color: #118f00;
       display: flex;
       justify-content: center;
       margin-top: 200px;
@@ -479,7 +478,7 @@ nav {
     }
 
     .quartil_ciano {
-      background-color: #03f7eb;
+      background-color: #010e83;
         display: flex;
         justify-content: center;
         margin-top: 285px;
@@ -489,7 +488,7 @@ nav {
       }
 
       .quartil_azul {
-        background-color: #0012af;
+        background-color: #007e77;
           display: flex;
           justify-content: center;
           margin-top: 370px;
