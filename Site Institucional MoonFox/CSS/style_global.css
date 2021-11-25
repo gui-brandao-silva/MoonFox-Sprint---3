@@ -28,6 +28,17 @@ justify-content: space-between;
 
 }
 
+.espaço {
+  width: 100vw;
+  height: 20vh;
+}
+
+.espaço2 {
+  width: 100vw;
+  height: 20vh;
+  background-color: #0C0F0F;
+}
+
   .selecionado {
       font-weight: bold;
   }
@@ -98,6 +109,7 @@ border: transparent;
 
 .beneficios{
   background-color: #000000;
+  height: 80vh;
 }
 
 
@@ -229,6 +241,7 @@ border: transparent;
   display: flex;
   align-items: flex-start;
   background-color: #0C0F0F;
+
  }
 
  .social .txt1{
