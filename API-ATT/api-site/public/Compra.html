@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style_global.css">
+    <link rel="stylesheet" href="./CSS/style_cadastro.CSS">
+    <link rel="shortcut icon" href="./Assets/images/logo_redondo.png" type="./assests/image/">
+    <link rel="stylesheet" href="./css/style-dash1.css">
+    <link rel="stylesheet" href="./css/style_global.css">
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="container-outro">
+            <a href="./index.html">
+                <img style="height: 140px; margin:3px;" src="Assets/images/MoonFox Versão v4.png" >
+            </a>
+
+                    <ul class="navbar">
+                    
+                        <header>
+                            <nav class="menu">
+                                <ul>
+                                    <li><a href="./index.html">Inicio</a></li>
+                                    <li>|</li>
+                                    <li><a href="./simulador.html">Simulador</a></li>
+                                    <li><a href="./login.html">Login</a></li>
+                                    <li><a href="./cadastro_global.html">Cadastro</a></li><br>
+                                </ul>
+                            </nav>
+                        </header>
+
+                    </ul>
+                </div>
+        </div>
+
+        
+      
+        <div class="banner-login ">
+            <div class="container-outro ">
+                <div class="card medio">
+                    <h2>Bem-vindo!</h2>
+                    <div class="formulario">
+                        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                           
+                            
+                            Nome Completo:
+                            <input id="ipt_model" name="nome" type="text" placeholder="Modelo " required>
+                            <br>
+                            Selecione o modelo :
+                            <select name="" id="">materiais
+                                <option value="">Selecione</option>
+                                <option value="">Selene Plus</option>
+                                <option value="">Selene Mega</option>
+                                <option value="">Selene Titan</option>
+                                
+                            </select>
+                            <br>
+                            Insira a quantidade:
+                            <input id="ipt_model" name="nome" type="number" placeholder="ex 1 " required>
+                            <br>
+                            Selecione o Pagamento :
+                            <select name="" id="">materiais
+                                <option value="">Selecione</option>
+                                <option value="">Boleto</option>
+                                <option value="">Cartao de débito</option>
+                                <option value="">Cartao de crédito</option>
+                                
+                            </select>
+
+                           
+                           
+                            <button type="button" onclick="cadastrar()" class="btn">Comprar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container-outro">
+     <h4>&copy; Todos os direitos reservados pela MOONFOX</h4>
+            </div>
+        </div>
+
+        </body>
+        </html>
+
+
+      
+
+    
+    
+</body>
+</html>
+<script>
+    function comprar() {
+        window.location.href = "./login.html"
+        
+    }
+
+    function cadastrar(){
+
+ 
+email = ipt_email.value.endsWith('.com') || ipt_email.value.endsWith('.br');
+senha = ipt_senha.value
+
+
+    localStorage.setItem('nome',ipt_nome.value);
+    localStorage.setItem('email',ipt_email.value);
+    localStorage.setItem('senha',ipt_senha.value);
+    localStorage.setItem('confirmacao-senha',ipt_confirmaSenha.value)
+            
+
+        if ( senha.length >= 8 ) {
+            
+            
+        }
+        else{
+            alert(' senha com minimo 8 caracteres')
+        }
+
+            
+        if (email) {
+
+        }
+        else{
+            alert('Email Invalido')
+           
+        }
+
+        if (ipt_senha.value == ipt_confirmaSenha.value) {
+            
+        }
+        else{
+            alert('Senhas diferentes')
+        }
+
+        
+        if (ipt_senha.value == ipt_confirmaSenha.value && senha.length >= 8 && email == true ) {
+                window.location.href = "./login.html"     
+                alert('cadastrado com sucesso');   
+            }
+            else{
+                
+                limpavar()
+            }
+            
+           
+    
+        
+
+}
+
+function limpavar() {
+
+    ipt_nome.value = ''
+    ipt_senha.value= ''
+    ipt_email.value =''
+    ipt_confirmaSenha.value = ''
+    
+}
+
+
+    
+    
+    </script>
