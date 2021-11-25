@@ -6,6 +6,7 @@ body {
     background-color: #0C0F0F;
     overflow-x: hidden;
     color: #FF5100;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   
   .container-outro {
@@ -38,7 +39,6 @@ justify-content: space-between;
     align-items: center;
     justify-content: space-evenly;
     text-decoration: none;
-    
   }
 
   a {
@@ -90,10 +90,20 @@ margin-top: -38px;
 margin-left: 690px;
 background-color: transparent;
 border: transparent;
+}
 
+.video{
+  background-color: #0C0F0F;
+}
+
+.beneficios{
+  background-color: #000000;
 }
 
 
+ .principal{
+   background-color: #000000;
+ }
 
 .spacing {
 	margin-top: 400px;
@@ -148,27 +158,39 @@ border: transparent;
  flex-direction: column;
  }
 
- .social .titulo {
+ .social .titulo1 {
 
  display: flex;
  justify-content: center;
  margin-bottom: 50px;
+ }
 
+ .social .titulo2{
+  justify-content: center;
 
  }
+
+ .social .titulo3 {
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  }
+
+
  .social h2{
 
  display: flex;
  padding: 20px;
  background-color:#FF5100;
- border-radius: 20px;
  align-self: center;
  justify-self: center;
  text-align: center;
  color: #000000;
  margin: 0;
- 
 }
+
+
 
  .social .boxes {
  display: flex;
@@ -176,7 +198,7 @@ border: transparent;
 
 }
 
- .social .box {
+ .social .box1 {
  display: flex;
  flex-wrap: wrap;
  justify-content: center;
@@ -185,6 +207,57 @@ border: transparent;
  width: 33%;
 }
 
+.social .box2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 33%;
+ }
+
+ .social .box3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 33%;
+ }
+
+ .social .beneficios {
+  display: flex;
+  align-items: flex-start;
+  background-color: #0C0F0F;
+ }
+
+ .social .txt1{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 33%;
+ }
+
+ .social .txt2{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 33%;
+ }
+
+ .social .txt3{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 33%;
+ }
+
 .social .box img {
  width: 200px;
  align-self: center;
@@ -192,13 +265,7 @@ border: transparent;
 }
 
 .social #imagemsust{
-  width: 150px;
-}
-
-.social .titulo {
- display: flex;
- justify-content: center;
- margin-bottom: 50px;
+  align-self: center;
 }
 
 
@@ -242,6 +309,21 @@ text-decoration: none;
   text-decoration: none;
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  /* Header */
 .h4 {
   margin: 0;
@@ -265,21 +347,20 @@ a:active{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Login e cadastro e calculadora */
-
-
-.loading-div {
-  width: 50px;
-  /* border: 3px solid pink; */
-  margin: auto;
-  display: none;
-}
-
-.loading-div img {
-  height: 50px;
-  width: 50px;
-}
-
 
 .banner-login {
   color: #bb5a00;
@@ -301,22 +382,8 @@ a:active{
 
 .banner-login .cards {
   background-color: #e5e5e5;
-  height: 74vh;
-  width: 300px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  border-radius: 35px 0px;
-  
-}
-
-.banner-login .cardsz {
-  background-color: #e5e5e5;
-  height: 82vh;
-  width: 370px;
+  height: 80vh;
+  width: 400px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -329,8 +396,8 @@ a:active{
 
 .banner-login .card {
   background-color: #E5E5E5;
-  height: 88vh;
-  width: 20vw;
+  height: 80vh;
+  width: 400px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -340,21 +407,6 @@ a:active{
   border-radius: 35px 0px;
   
 }
-
-.banner-login .container {
-  height: 550px;
-  /* border: 3px solid green; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card img{
-  width: 60%;
-  height: 60%;
-}
-
-
 
 button {
   cursor: pointer;
@@ -374,10 +426,6 @@ input {
   align-self: center;
   
   
-}
-
-#ajusta_senha{
-  margin-left: 1.6%;
 }
 
 
@@ -407,7 +455,6 @@ select {
   width: 170px;
   align-self: center;
   margin-top: 10px;
- 
 }
 
 
@@ -429,6 +476,13 @@ h2{
   display: flex;
   justify-content: center;
 }
+
+
+
+
+
+
+
 
 
 
