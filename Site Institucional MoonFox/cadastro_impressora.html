@@ -47,19 +47,19 @@
                     <div class="formulario">
                         <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
                             Modelo impressora:
-                            <input id="ipt_nome" name="nome" type="text" placeholder="Modelo impressora" required>
+                            <input id="ipt_impressora" name="nome" type="text" placeholder="Ex: Ender I3 " required>
                             <br>
                             Quantidade:
-                            <input id="ipt_quantidade" name="email" type="number" placeholder="Quantidade" required >
+                            <input id="ipt_quantidade" name="quantidade" type="number" placeholder="Ex: 3"  required >
                             <br>
                             Principal Filamento:
-                            <input id="ipt_filamento" name="filamento" type="text" placeholder="Filamento" required >
+                            <input id="ipt_filamento" name="filamento" type="text" placeholder="Ex: ABS" required >
                             <br>
                             Nome Filial:
-                            <input id="ipt_filial" name="nome_filial" type="Filial" placeholder="Nome Filial" required>
+                            <input id="ipt_filial" name="nome_filial" type="Filial" placeholder="Ex: MoonFox Mauá" required>
                             <br>
                             <button type="button" onclick="cadastrar()" class="btn">Cadastrar</button>  <br>
-                            <a href="./login.html"> Já sou cadastrado</a>
+              
                         </form>
                     </div>
                 </div>
@@ -114,7 +114,7 @@ senha = ipt_senha.value
 
         }
         else{
-            alert('Email errado ai irmão')
+            alert('Email inválido')
            
         }
 
@@ -127,7 +127,7 @@ senha = ipt_senha.value
 
         
         if (ipt_senha.value == ipt_confirmaSenha.value && senha.length >= 8 && email == true ) {
-                window.location.href = "./login.html"     
+                window.location.href = "./dashboard.html"     
                 alert('cadastrado com sucesso');   
             }
             else{
@@ -143,10 +143,10 @@ senha = ipt_senha.value
 
 function limpavar() {
 
-    ipt_nome.value = ''
-    ipt_senha.value= ''
-    ipt_email.value =''
-    ipt_confirmaSenha.value = ''
+    ipt_impressora.value = ''
+    ipt_quantidade.value= ''
+    ipt_filamento.value =''
+    ipt_filial.value = ''
     
 }
 
