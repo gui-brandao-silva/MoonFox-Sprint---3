@@ -420,6 +420,18 @@ a:active{
   border-radius: 35px 0px;
   
 }
+.banner-login .container-outro .cardsz-medio {
+    background-color: #E5E5E5;
+    height: 80vh;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 35px 0px;
+}
 
 button {
   cursor: pointer;
