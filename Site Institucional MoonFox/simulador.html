@@ -45,25 +45,25 @@
                 <h2>Simulador Financeiro</h2><br>
                 <div id="resultado">
                     <div id="card-calc">
-                        <span>Material utilizado:</span> <br>
+                        <span>Material utilizado:</span> 
                         <select id="sel_material">
                             <option value="selecione">Selecione seu tipo de material </option>
                             <option value="pla">PLA</option>
                             <option value="abs">ABS</option>
                         </select>
-
-                        <span> quantidade diária de quilos:</span> <br>
+<br>
+                        <span> quantidade diária de quilos:</span> 
                         <input id="ipt_quilos" type="text" placeholder="quilos trabalhados por dia">
-
-                        <span>Tempo de operação diário:</span> <br>
+<br>
+                        <span>Tempo de operação diário:</span> 
                         <input id="ipt_operacao" type="text" placeholder="Tempo de Operação">
-
-                        <span>Faturamento Diário: </span> <br>
+<br>
+                        <span>Faturamento Diário: </span> 
                         <input id="ipt_faturamento" type="text" placeholder="faturamento Diário">
-
-                        <span>dias trabalhados por semana:</span> <br>
+<br>
+                        <span>dias trabalhados por semana:</span>
                         <input id="ipt_diastrab" type="text" placeholder="dias por semana">
-
+ <br>
 
                         <button onclick="calcular()" class="btn">Calcular</button> <br>
                     </div>
@@ -123,18 +123,18 @@
 
         if (sel_material.value == 'abs' && tempo_operacao < 17 && dias_trabalhados <= 7) {
 
-            resultado.innerHTML = ` Usando o material ABS<br>Você tera uma economia diária : ${porcentagem_economia}KG,<br> Semanal ${porcentagem_economia * dias_trabalhados}KG,<br> Mensal ${porcentagem_economia * dias_trabalhados * 4}KG,<br><br> você terá aumento de produção de ${horasABS - tempo_operacao}H por dia<br><br>  Um faturamento diário de R$${((horasABS * faturamento) / tempo_operacao).toFixed(2)},<br>
+            resultado.innerHTML = ` Usando o material ABS<br>Você tera uma economia diária : ${porcentagem_economia}KG,<br> Semanal ${(porcentagem_economia * dias_trabalhados).toFixed(2)}KG,<br> Mensal ${(porcentagem_economia * dias_trabalhados * 4).toFixed(2)}KG,<br><br> você terá aumento de produção de ${horasABS - tempo_operacao}H por dia<br><br>  Um faturamento diário de R$${((horasABS * faturamento) / tempo_operacao).toFixed(2)},<br>
     Semanal de R$${((horasABS * faturamento) / tempo_operacao * dias_trabalhados).toFixed(2)},<br> Mensal de R$${((horasABS * faturamento) / tempo_operacao * dias_trabalhados * 4).toFixed(2)}<br><br> <button style="margin-left: 150px;" id='bt_recalc' onclick="recalcula()" class="btn">recalcular</button> `
         }
         else if (sel_material.value == 'abs' && tempo_operacao > 17 && tempo_operacao <= 24 && dias_trabalhados <= 7) {
 
             resultado.innerHTML = `Seu tempo de operação é ${tempo_operacao} horas, o tempo de produção recomendado com segurança usando nosso serviço é 17 horas<br><br>Usando o material ABS<br>
-    <br>Você tera uma economia diária : ${porcentagem_economia}KG,<br> Semanal ${porcentagem_economia * dias_trabalhados}KG,<br> Mensal ${porcentagem_economia * dias_trabalhados * 4}KG<br> <button style="margin-left: 150px;" id='bt_recalc' onclick="recalcula()" class="btn">recalcular</button>  `
+    <br>Você tera uma economia diária : ${porcentagem_economia}KG,<br> Semanal ${(porcentagem_economia * dias_trabalhados).toFixed(2)}KG,<br> Mensal ${(porcentagem_economia * dias_trabalhados * 4).toFixed(2)}KG<br> <button style="margin-left: 150px;" id='bt_recalc' onclick="recalcula()" class="btn">recalcular</button>  `
 
         }
         else if (sel_material.value == 'abs' && tempo_operacao == 17 && dias_trabalhados <= 7) {
 
-            resultado.innerHTML = `Seu tempo de operação é ${tempo_operacao} horas,o tempo de produção está perfeito<br><br>Usando material ABS<br><br>Você tera uma economia diária : ${porcentagem_economia}KG,<br> Semanal ${porcentagem_economia * dias_trabalhados}KG,<br> Mensal ${porcentagem_economia * dias_trabalhados * 4}KG<br> <button style="margin-left: 150px;" id='bt_recalc' onclick="recalcula()" class="btn">recalcular</button>  `
+            resultado.innerHTML = `Seu tempo de operação é ${tempo_operacao} horas,o tempo de produção está perfeito<br><br>Usando material ABS<br><br>Você tera uma economia diária : ${porcentagem_economia}KG,<br> Semanal ${(porcentagem_economia * dias_trabalhados).toFixed(2)}KG,<br> Mensal ${(porcentagem_economia * dias_trabalhados * 4).toFixed(2)}KG<br> <button style="margin-left: 150px;" id='bt_recalc' onclick="recalcula()" class="btn">recalcular</button>  `
 
         }
 
@@ -142,7 +142,7 @@
 
         if (sel_material.value == 'pla' && tempo_operacao < 20 && dias_trabalhados <= 7) {
 
-            resultado.innerHTML = ` Usando o material PLA<br>Você tera uma economia diária : ${porcentagem_economia}KG,<br> Semanal ${porcentagem_economia * dias_trabalhados}KG,<br>  Mensal ${porcentagem_economia * dias_trabalhados * 4}KG<br><br> Você terá aumento de produção de ${horasPLA - tempo_operacao}H por dia<br>
+            resultado.innerHTML = ` Usando o material PLA<br>Você tera uma economia diária : ${porcentagem_economia}KG,<br> Semanal ${(porcentagem_economia * dias_trabalhados).toFixed(2)}KG,<br>  Mensal ${(porcentagem_economia * dias_trabalhados * 4).toFixed(2)}KG<br><br> Você terá aumento de produção de ${horasPLA - tempo_operacao}H por dia<br>
     <br>  Um faturamento diário de R$${((horasABS * faturamento) / tempo_operacao).toFixed(2)},<br>
      Semanal R$${((horasPLA * faturamento) / tempo_operacao * dias_trabalhados).toFixed(2)},<br> Mensal R$${((horasPLA * faturamento) / tempo_operacao * dias_trabalhados * 4).toFixed(2)}<br><br> <button style="margin-left: 150px;" id='bt_recalc' onclick="recalcula()" class="btn">recalcular</button> `
 
@@ -150,13 +150,13 @@
         else if (sel_material.value == 'pla' && tempo_operacao > 20 && tempo_operacao <= 24 && dias_trabalhados <= 7) {
 
             resultado.innerHTML = `Seu tempo de operação é ${tempo_operacao} horas, o tempo de produção recomendado com segurança usando nosso serviço é 20 horas<br><br>Usando o material ABS<br><br>
-    Você tera uma economia diária : ${porcentagem_economia}KG,<br> Semanal ${porcentagem_economia * dias_trabalhados}KG,<br> Mensal ${porcentagem_economia * dias_trabalhados * 4}KG<br> <button style="margin-left: 150px;" id='bt_recalc' onclick="recalcula()" class="btn">recalcular</button>  `
+    Você tera uma economia diária : ${porcentagem_economia}KG,<br> Semanal ${(porcentagem_economia * dias_trabalhados).toFixed(2)}KG,<br> Mensal ${(porcentagem_economia * dias_trabalhados * 4).toFixed(2)}KG<br> <button style="margin-left: 150px;" id='bt_recalc' onclick="recalcula()" class="btn">recalcular</button>  `
 
 
         }
         else if (sel_material.value == 'pla' && tempo_operacao == 20 && dias_trabalhados <= 7) {
 
-            resultado.innerHTML = `Seu tempo de operação é ${tempo_operacao} horas, o tempo de produção da sua impressora está perfeito,<br><br>Usando material PLA<BR><BR>Você tera uma economia diária : ${porcentagem_economia}KG,<br> Semanal ${porcentagem_economia * dias_trabalhados}KG,<br>  Mensal ${porcentagem_economia * dias_trabalhados * 4}KG<br> <button style="margin-left: 150px;" id='bt_recalc' onclick="recalcula()" class="btn">recalcular</button>  `
+            resultado.innerHTML = `Seu tempo de operação é ${tempo_operacao} horas, o tempo de produção da sua impressora está perfeito,<br><br>Usando material PLA<BR><BR>Você tera uma economia diária : ${porcentagem_economia}KG,<br> Semanal ${(porcentagem_economia * dias_trabalhados).toFixed(2)}KG,<br>  Mensal ${(porcentagem_economia * dias_trabalhados * 4).toFixed(2)}KG<br> <button style="margin-left: 150px;" id='bt_recalc' onclick="recalcula()" class="btn">recalcular</button>  `
 
 
         }
