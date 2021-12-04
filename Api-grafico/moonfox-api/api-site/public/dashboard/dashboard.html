@@ -8,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcquaTec | Dashboards</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="dashboards.css">
+    <link rel="stylesheet" href="../css/style-dash.css">
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,55 +21,73 @@
 
 </head>
 
-<body onload="validarSessao(), atualizarFeed()">
-    <!-- <body onload="validarSessao()"> -->
+<body onload="validarSessao(), atualizarFeed(),obterDadosGrafico()">
 
-    <div class="janela">
-        <div class="header-left">
-            <h1>AcquaTec</h1>
+<div class="header">
+    <div class="container">
+        <a href="./index.html">
+            <img style="height: 140px; margin:3px;" src="../assets/imgs/MoonFox Versão v4 branca.png" >
+        </a>
+             <div class="navbar"></div>
+                <ul class="navbar">
+           
+                    <header>
+                        <nav class="menu">
+                            <ul>
+                                <li><a href="./index.html">Inicio</a></li>
+                                <li>|</li>
+                                <li><a href="./simulador.html">Simulador</a></li>
+                                <li><a href="./login.html">Login</a></li>
+                                <li><a href="./cadastro.html">Cadastro</a></li><br>
+                            </ul>
+                        </nav>
+                    </header>
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
+        </ul>
+    </div>
+</div>
 
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
 
-            <div class="btn-nav">
 
-                <h3>Gráficos</h3>
 
-            </div>
+<header>
+    <nav class="menu">
+        <h2>Paulozao</h2>
+        <ul>
+            <li><a href="./dashboard.HTML">Ender I3</a></li>
+            <li><a href="./dashboard.HTML">Gama Pro</a></li>
+            <li><a href="./dashboard.HTML">Gama Pro MK2</a></li>
+            <li><a href="./dashboard.HTML">Graber I3</a></li>
+            <li><a href="./cadastro_impressora.html">Adicione impressora</a></li>
+        </ul>
+    </nav>
+</header>
 
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
 
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
+<div class="dash-container">
 
-        </div>
 
-        <div class="dash">
-            <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <button class="btn-chart" onclick="obterDadosGrafico(1)">Aquario 1</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(2)">Aquario 2</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(3)">Aquario 3</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(4)">Aquario 4</button>
-            </div>
-            <div class="graph">
-                <canvas id="canvas_grafico"></canvas>
-            </div>
-        </div>
+    
+    <div class="grif">
+        
+       
+    </div>
+    <div class="graf">
+        <canvas id="myChart2bar2" width="0.5" height="0.5"></canvas>
+    </div>   
+    
+    <div class="graf_principal">
+        <canvas id="canvas_grafico"></canvas>
     </div>
 
+    
+</div>
+
+</div>
+
+   
+       
+            
 
 </body>
 
@@ -78,9 +95,57 @@
 
 <script>
 
+
+  
+var pico = (Math.random()*4 +  28 ).toFixed(1);
+        var ideal = (Math.random()*4 + 20 ).toFixed(1);
+        var min = (Math.random()*5 + 15 ).toFixed(1);
+    
+      var aleatorio =  (Math.random() * 20 + 15).toFixed(1);
+      var aleatorio2 = (Math.random() * 20 + 15).toFixed(1);
+      var aleatorio3 = (Math.random() * 20 + 15).toFixed(1);
+      var aleatorio4 = (Math.random() * 20 + 15).toFixed(1);
+      var aleatorio5 = (Math.random() * 20 + 15).toFixed(1);
+      var aleatorio6 = (Math.random() * 20 + 15).toFixed(1);
+
+      (Math.random()*2+20).toFixed(1);
+
+
+var ctx = document.getElementById('myChart2bar2').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Tempo de impressão restante', 'Tempo imprimindo'],
+        datasets: [{
+            label: 'genero musical',
+            data: [aleatorio, aleatorio2],
+            backgroundColor: [
+                'rgba(255, 94, 0)',
+                'rgba(251, 255, 29)'
+            ],
+            borderColor: [
+                'rgba(255, 94, 0)',
+                'rgba(251, 255, 29)'
+            ],
+            borderWidth: 3
+        }]
+    },
+    options: {
+        
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        maintainAspectRatio: false
+    }
+});
+
+
+
     let proximaAtualizacao;
 
-    window.onload = obterDadosGrafico(1);
+    window.onload = obterDadosGrafico(2);
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
@@ -120,9 +185,9 @@
             datasets: [
                 {
                     yAxisID: 'y-umidade',
-                    label: 'Umidade',
-                    borderColor: '#32B9CD',
-                    backgroundColor: '#32b9cd8f',
+                    label: '',
+                    borderColor: 'rgba(255,255,255,0.0)',
+                    backgroundColor: 'rgba(255,255,255,0.0)',
                     fill: true,
                     data: []
                 },
@@ -157,7 +222,7 @@
                 stacked: false,
                 title: {
                     display: true,
-                    text: 'Histórico recente de umidade/temperatura'
+                    text: 'Histórico recente de temperatura'
                 },
                 scales: {
                     yAxes: [{
@@ -167,7 +232,7 @@
                         id: 'y-temperatura',
                         ticks: {
                             beginAtZero: true,
-                            max: 100,
+                            max: 45,
                             min: 0
                         }
                     }, {
@@ -177,7 +242,7 @@
                         id: 'y-umidade',
                         ticks: {
                             beginAtZero: true,
-                            max: 100,
+                            max: 45,
                             min: 0
                         },
 
@@ -236,4 +301,7 @@
             });
 
     }
+
+
+  
 </script>

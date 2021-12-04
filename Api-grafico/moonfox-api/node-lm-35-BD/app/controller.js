@@ -23,7 +23,7 @@ router.post('/sendData', (request, response) => {
     let data_agora = new Date()
 
     var sql = "INSERT INTO tb_registros(fk_sensor,temperatura,momento) VALUES(?)"; 
-    let values = [44,temperatura,data_agora];
+    let values = [40,temperatura,data_agora];
 
     db.query(sql, [values,data_agora,1], function(err, result){
         if(err) throw err;
