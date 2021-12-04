@@ -1,0 +1,45 @@
+
+--TABELA EMPRESA--
+create table tb_empresa (
+id_empresa int primary key identity(10,1),
+nome_empresa varchar(45),
+email_usuario varchar(45),
+senha varchar(45)
+);
+select*from tb_empresa;
+
+--TABELA FILIAIS--
+create table tb_filial (
+id_filial int identity(20,1),
+CEP_filial varchar(45),
+PRIMARY KEY (`id_filial`, `fk_empresa`),
+fk_empresa int foreign key references tb_empresa (id_empresa)
+);
+select * from tb_filial;
+
+--TABELA IMPRESSORA--
+create table tb_impressora (
+id_impressora int primary key identity(50,1),
+modelo_impressora varchar(45),
+filamento_principal varchar (3),
+check( Filamento = 'ABS' or Filamento = 'PLA'),
+fk_filial int foreign key references tbs_filial (id_filial)
+);
+select * from tb_impressora;
+
+--TABELA SENSOR--
+create table tb_sensor(
+id_sensor int primary key identity(60,1),
+fk_impressora int foreign key references tb_impressora (id_impressora)
+);
+select * from tb_sensor;
+
+--TABELA REGISTROS--
+create table tb_registro(
+id_registro int identity(70,1),
+primary key (`id_registro`,`fk_sensor`),
+fk_sensor int foreign key references tb_sensor (id_sensor),	
+temperatura_atual decimal (10,2)
+);
+select * from tb_registro;
+
