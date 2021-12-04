@@ -17,6 +17,7 @@
             <a href="./index.html">
                 <img style="height: 140px; margin:3px;" src="Assets/images/MoonFox Versão v4.png" >
             </a>
+
                     <ul class="navbar">
                     
                         <header>
@@ -26,7 +27,7 @@
                                     <li>|</li>
                                     <li><a href="./simulador.html">Simulador</a></li>
                                     <li><a href="./login.html">Login</a></li>
-                                    <li class="selecionado"><a href="./cadastro_cliente.HTML">Cadastro</a></li><br>
+                                    <li><a href="./cadastro.html">Cadastro</a></li><br>
                                 </ul>
                             </nav>
                         </header>
@@ -40,23 +41,38 @@
         <div class="banner-login ">
             <div class="container-outro ">
                 <div class="card medio">
-                    <a href="./index.html">
-                        <img style="height: 145px; margin:3px;" src="Assets/images/MoonFox_Versao_v4-removebg-preview-preto.png" >
-                    </a>
-                    <b style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Cadastro impressora:</b><br/>
+                    <h2>Bem-vindo!</h2>
                     <div class="formulario">
                         <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                            Modelo impressora:
-                            <input id="ipt_impressora" name="nome" type="text" placeholder="Ex: Ender I3 " required>
+                           
+                            
+                            Nome Completo:
+                            <input id="ipt_model" name="nome" type="text" placeholder="Modelo " required>
                             <br>
-                            Principal Filamento:
-                            <input id="ipt_filamento" name="filamento" type="text" placeholder="Ex: ABS" required >
+                            Selecione o modelo :
+                            <select name="" id="">materiais
+                                <option value="">Selecione</option>
+                                <option value="">Selene Plus</option>
+                                <option value="">Selene Mega</option>
+                                <option value="">Selene Titan</option>
+                                
+                            </select>
                             <br>
-                            Nome Filial:
-                            <input id="ipt_filial" name="nome_filial" type="Filial" placeholder="Ex: MoonFox Mauá" required>
+                            Insira a quantidade:
+                            <input id="ipt_model" name="nome" type="number" placeholder="ex 1 " required>
                             <br>
-                            <button type="button" onclick="cadastrar()" class="btn">Cadastrar</button>  <br>
-              
+                            Selecione o Pagamento :
+                            <select name="" id="">materiais
+                                <option value="">Selecione</option>
+                                <option value="">Boleto</option>
+                                <option value="">Cartao de débito</option>
+                                <option value="">Cartao de crédito</option>
+                                
+                            </select>
+
+                           
+                           
+                            <button type="button" onclick="cadastrar()" class="btn">Comprar</button>
                         </form>
                     </div>
                 </div>
@@ -65,7 +81,7 @@
 
         <div class="footer">
             <div class="container-outro">
-     <h4>&copy; Todos os direitos reservados pela MOONFOX™</h4>
+     <h4>&copy; Todos os direitos reservados pela MOONFOX</h4>
             </div>
         </div>
 
@@ -111,7 +127,7 @@ senha = ipt_senha.value
 
         }
         else{
-            alert('Email inválido')
+            alert('Email Invalido')
            
         }
 
@@ -119,12 +135,12 @@ senha = ipt_senha.value
             
         }
         else{
-            alert('suas senhas não são iguais')
+            alert('Senhas diferentes')
         }
 
         
         if (ipt_senha.value == ipt_confirmaSenha.value && senha.length >= 8 && email == true ) {
-                window.location.href = "./dashboard.html"     
+                window.location.href = "./login.html"     
                 alert('cadastrado com sucesso');   
             }
             else{
@@ -140,10 +156,10 @@ senha = ipt_senha.value
 
 function limpavar() {
 
-    ipt_impressora.value = ''
-    ipt_quantidade.value= ''
-    ipt_filamento.value =''
-    ipt_filial.value = ''
+    ipt_nome.value = ''
+    ipt_senha.value= ''
+    ipt_email.value =''
+    ipt_confirmaSenha.value = ''
     
 }
 

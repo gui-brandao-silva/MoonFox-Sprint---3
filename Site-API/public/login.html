@@ -47,18 +47,18 @@
                     <div class="formulario">
                         <form id="form_login" method="post" onsubmit="return entrar()">
                             E-mail:
-                            <input id="email_login" name="email" type="text" placeholder="Login">
+                            <input id="ipt_email" name="email" type="text" placeholder="Login">
                             <br>
                             Senha:
-                            <input id="senha_login" name="senha" type="password" placeholder="******">
+                            <input id="ipt_senha" name="senha" type="password" placeholder="******">
                             <br>
-                            <button onclick="logar()" class="btn" type="button">
+                            <button onclick="entrar()" class="btn" type="button">
                                 Entrar
                             </button>
                             <br/>
                             <a href="">Esqueceu a senha ?</a> 
                             <br/>
-                            Não possui um cadastro? <a href="./cadastro_cliente.HTML"> Junte-se agora! </a>
+                            Não possui um cadastro? <a href="./cadastro.html"> Junte-se agora! </a>
                         </form>
                     </div>
                 </div>
@@ -74,30 +74,75 @@
         </body>
         </html>
         <script>
-            function comprar() {
-                window.location.href = "./login.html"
-    
-            }
-
-
-            function logar() {
-            
-               var nome = localStorage.getItem('nome') 
-               var email = localStorage.getItem('email')
-               var senha = localStorage.getItem('senha')
-            
-               if (email_login.value == email && senha_login.value == senha) {
-            
-                   alert(`Olá bem vindo ${nome}` )
-                   window.location.href = "./dashboard.html"
-                   
-               }
-            
-               else{
-                   alert('email ou senha errado')
-               }
-                
-            }
+        
+        function entrar() {
        
-            </script>
+
+        var emailVar = ipt_email.value
+        var senhaVar = ipt_senha.value;
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (emailVar == "" || senhaVar == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+           
+            return false;
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+    
+            return false;
+        }
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard.HTML";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+               
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+
+         </script>
             

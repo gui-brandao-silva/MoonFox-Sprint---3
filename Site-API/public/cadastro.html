@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style_global.css">
-    <link rel="stylesheet" href="./CSS/style_cadastro.CSS">
+    <link rel="stylesheet" href="./CSS/style_global.css">
+
     <link rel="shortcut icon" href="./Assets/images/logo_redondo.png" type="./assests/image/">
 
 </head>
@@ -26,7 +26,7 @@
                                     <li>|</li>
                                     <li><a href="./simulador.html">Simulador</a></li>
                                     <li><a href="./login.html">Login</a></li>
-                                    <li class="selecionado"><a href="./cadastro_global.html">Cadastro</a></li><br>
+                                    <li class="selecionado"><a href="./cadastro_cliente.HTML">Cadastro</a></li><br>
                                 </ul>
                             </nav>
                         </header>
@@ -47,16 +47,16 @@
                     <div class="formulario">
                         <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
                             Nome Empresa:
-                            <input id="ipt_nome" name="nome" type="text" placeholder="Nome completo" required>
+                            <input id="ipt_nome"  type="text" placeholder="Nome completo" required>
                             <br>
                             E-mail Usuario:
-                            <input id="ipt_email" name="email" type="text" placeholder="meuemail@provedor.com" required >
+                            <input id="ipt_email" type="text" placeholder="meuemail@provedor.com" required >
                             <br>
                             Senha:
-                            <input id="ipt_senha" name="senha" type="password" placeholder="Minimo 8 caracteres" required >
+                            <input id="ipt_senha"  type="password" placeholder="Minimo 8 caracteres" required >
                             <br>
                             Confirmar da Senha:
-                            <input id="ipt_confirmaSenha" name="confirmacao-senha" type="password" placeholder="Confirmar da Senha" required>
+                            <input id="ipt_confirmaSenha"  type="password" placeholder="Confirmar da Senha" required>
                             <br>
                             <button type="button" onclick="cadastrar()" class="btn">Cadastrar</button>  <br>
                             <a href="./login.html"> Já sou cadastrado</a>
@@ -83,74 +83,75 @@
 </body>
 </html>
 <script>
-    function comprar() {
-        window.location.href = "./login.html"
+    
+    function cadastrar() {
         
+
+        var nomeVar = ipt_nome.value;
+        var emailVar = ipt_email.value;
+        var senhaVar = ipt_senha.value;
+        var confirmacaoSenhaVar = ipt_confirmaSenha.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nomeVar == "") {
+                console.log('nome está em branco')
+            }
+            if (emailVar == "") {
+                console.log('email está em branco')
+            }
+            if (senhaVar == "") {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenhaVar == "") {
+                console.log('confirmacaoSenha está em branco')
+            }
+         
+            return false;
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+         
+            return false;
+        }
+
+        if (senhaVar != confirmacaoSenhaVar) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            
+            return false;
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "login.html";
+                limparFormulario();
+              
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+    
+        });
+
+        return false;
     }
-
-    function cadastrar(){
-
- 
-email = ipt_email.value.endsWith('.com') || ipt_email.value.endsWith('.br');
-senha = ipt_senha.value
-
-
-    localStorage.setItem('nome',ipt_nome.value);
-    localStorage.setItem('email',ipt_email.value);
-    localStorage.setItem('senha',ipt_senha.value);
-    localStorage.setItem('confirmacao-senha',ipt_confirmaSenha.value)
-            
-
-        if ( senha.length >= 8 ) {
-            
-            
-        }
-        else{
-            alert(' senha com minimo 8 caracteres')
-        }
-
-            
-        if (email) {
-
-        }
-        else{
-            alert('Email errado ai irmão')
-           
-        }
-
-        if (ipt_senha.value == ipt_confirmaSenha.value) {
-            
-        }
-        else{
-            alert('suas senhas não são iguais')
-        }
-
-        
-        if (ipt_senha.value == ipt_confirmaSenha.value && senha.length >= 8 && email == true ) {
-                window.location.href = "./login.html"     
-                alert('cadastrado com sucesso');   
-            }
-            else{
-                
-                limpavar()
-            }
-            
-           
-    
-        
-
-}
-
-function limpavar() {
-
-    ipt_nome.value = ''
-    ipt_senha.value= ''
-    ipt_email.value =''
-    ipt_confirmaSenha.value = ''
-    
-}
-
-
     
     
     </script>
