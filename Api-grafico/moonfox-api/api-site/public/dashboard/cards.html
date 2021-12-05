@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="../css/style-dash.css">
     
-    <link rel="stylesheet" href="dashboards.css">
+
 
     <script src="../js/funcoes.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -53,7 +53,7 @@
         
         <header>
             <nav class="menu">
-                <h2>Paulozao</h2>
+         
                 <ul>
                     <li><a href="./dashboard.html">Ender I3</a></li>
                     <li><a href="./dashboard.HTML">Gama Pro</a></li>
@@ -100,37 +100,37 @@
             </div>
 
             <div class="cards">
-                <div class="card">
+                <div class="card" id="card_1">
                     <h1>Ender i3</h1>
                     <div class="temperatura">
                         <p id="temp_aquario_1">-°C</p>
                     </div>
-                    <div class="cor-alerta" id="card_1"></div>
+                    <div class="cor_alerta" ></div>
                 </div>
-                <div class="card">
+                <div class="card" id="card_2">
                     <h1>3D mark</h1>
                     <div class="temperatura">
                         <p id="temp_aquario_2">-°C</p>
                     </div>
-                    <div class="cor-alerta" id="card_2"></div>
+                    <div class="cor_alerta" ></div>
 
                 </div>
 
-                <div class="card">
-                    <h1>3D mark</h1>
+                <div class="card" id="card_3">
+                    <h1>gama-pro</h1>
                     <div class="temperatura">
                         <p id="temp_aquario_3">-°C</p>
                     </div>
-                    <div class="cor-alerta" id="card_3"></div>
+                    <div class="cor_alerta" ></div>
 
                 </div>
 
-                <div class="card">
-                    <h1>3D mark</h1>
+                <div class="card" id="card_4">
+                    <h1>graber i3</h1>
                     <div class="temperatura">
                         <p id="temp_aquario_4">-°C</p>
                     </div>
-                    <div class="cor-alerta" id="card_4"></div>
+                    <div class="cor_alerta" ></div>
 
                 </div>
 
@@ -148,6 +148,12 @@
 <script>
 
     function atualizacaoPeriodica() {
+
+    var nomeUsuario = sessionStorage.getItem('carlos')
+
+
+        b_usuario.innerHTML = `${nomeUsuario}`
+
         obterdados(1);
         obterdados(2);
         obterdados(3);

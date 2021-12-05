@@ -251,6 +251,7 @@ select {
 
 
 
+
 #img-dash{
 
   width: 80%;
@@ -550,28 +551,29 @@ body {
 
 
 .regua {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 20%;
-  margin-top: 30px;
-  position: absolute;
+      display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 15%;
+    margin-top: 30px;
+    position: absolute;
+    left: 7%;
 }
 
 .perigo-frio {
-  background-color: #5c6bc0;
+  background-color: #061fac;
 }
 
 .perigo-quente {
-  background-color: #ff7043;
+  background-color: #fa0000;
 }
 
 .alerta-frio {
-  background-color: #42a5f5;
+  background-color: #8fc2ec;
 }
 
 .alerta-quente {
-  background-color: #ffee58;
+  background-color: #bead11;
 }
 
 .ideal {
@@ -588,20 +590,21 @@ body {
 
 .cards {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 450px;
-    width: 100%;
-    align-items: center;
-    color: white;
-    position: absolute;
-    left: 7%;
-    top: 42%;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 450px;
+  width: 100%;
+  align-items: center;
+  color: white;
+  position: absolute;
+  left: -2%;
+  top: 33%;
 }
 
 .card {
   margin: 2%;
-  width: 32%;
+  width: 20%
+  height 50%;
   flex-wrap: wrap;
   display: flex;
   text-align: center;
@@ -620,7 +623,6 @@ body {
 
 .cards h1 {
   font-size: 22px;
-  width: 100%;
   border-bottom: solid white 1px;
   text-align: left;
   font-weight: lighter;
@@ -635,10 +637,11 @@ body {
 }
 
 .cor-alerta {
-  width: 13%;
-  height: 30%;
-  border-radius: 50px;
+  width: 20%;
+  height: 50%;
+  margin-left: 15%;
   margin-top: 6%;
+
   /* background-color: #c7c7c7; */
 }
 
@@ -664,4 +667,9 @@ body {
   color: white;
   background-color: #e6005a;
   margin: 5px;
+}
+
+
+.voltar{
+  background-color: #FF5100;
 }

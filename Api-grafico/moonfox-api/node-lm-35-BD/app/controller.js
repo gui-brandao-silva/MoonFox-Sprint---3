@@ -23,13 +23,13 @@ router.post('/sendData', (request, response) => {
     let data_agora = new Date()
 
     var sql = "INSERT INTO tb_registros(fk_sensor,temperatura,momento) VALUES(?)"; 
-    let values = [2,temperatura,data_agora];
+    let values = [(Math.random()*2+1).toFixed(),temperatura,data_agora];
 
-    db.query(sql, [values,data_agora,1], function(err, result){
+    db.query(sql, [values,data_agora,(Math.random()*3+1).toFixed()], function(err, result){
         if(err) throw err;
         console.log("Medidas inseridas: " + result.affectedRows)
     });
-    response.sendStatus(200);
+    response.sendStatus(220);
 });
 
 
