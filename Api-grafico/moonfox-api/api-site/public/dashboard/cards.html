@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcquaTec | Tempo Real</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-dash.css">
+    
     <link rel="stylesheet" href="dashboards.css">
 
     <script src="../js/funcoes.js"></script>
@@ -23,35 +24,56 @@
     <div class="janela">
 
 
-        <div class="header-left dash-header">
+        <div class="header">
+            <div class="container">
+                <a href="./index.html">
+                    <img style="height: 140px; margin:3px;" src="../assets/imgs/MoonFox Versão v4 branca.png" >
+                </a>
+                     <div class="navbar"></div>
+                        <ul class="navbar">
+                   
+                            <header>
+                                <nav class="menu">
+                                    <ul>
+                                        <li><a href="./index.html">Inicio</a></li>
+                                        <li>|</li>
+                                        <li><a href="./simulador.html">Simulador</a></li>
+                                        <li><a href="./login.html">Login</a></li>
+                                        <li><a href="./cadastro.html">Cadastro</a></li><br>
+                                    </ul>
+                                </nav>
+                            </header>
+        
+                </ul>
+            </div>
+        </div>
+        
+        
+        
+        
+        <header>
+            <nav class="menu">
+                <h2>Paulozao</h2>
+                <ul>
+                    <li><a href="./dashboard.html">Ender I3</a></li>
+                    <li><a href="./dashboard.HTML">Gama Pro</a></li>
+                    <li><a href="./dashboard.HTML">Gama Pro MK2</a></li>
+                    <li><a href="./dashboard.HTML">Graber I3</a></li>
+                    <li><a href="./cadastro_impressora.html">Adicione impressora</a></li>
+                </ul>
+            </nav>
+        </header>
 
-            <h1>AcquaTec</h1>
+          
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
-            <div class="btn-nav">
-                <h3>Aquários</h3>
-            </div>
+            
 
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
 
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
-        </div>
+     
 
         <div class="dash">
             <div class="regua">
@@ -79,34 +101,41 @@
 
             <div class="cards">
                 <div class="card">
-                    <h1>Aquário 1</h1>
+                    <h1>Ender i3</h1>
                     <div class="temperatura">
                         <p id="temp_aquario_1">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_1"></div>
                 </div>
                 <div class="card">
-                    <h1>Aquário 1</h1>
+                    <h1>3D mark</h1>
                     <div class="temperatura">
                         <p id="temp_aquario_2">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_2"></div>
 
                 </div>
+
                 <div class="card">
-                    <h1>Aquário 1</h1>
+                    <h1>3D mark</h1>
                     <div class="temperatura">
                         <p id="temp_aquario_3">-°C</p>
                     </div>
-                    <div class="cor-alerta ideal" id="card_3"></div>
+                    <div class="cor-alerta" id="card_3"></div>
+
                 </div>
+
                 <div class="card">
-                    <h1>Aquário 1</h1>
+                    <h1>3D mark</h1>
                     <div class="temperatura">
                         <p id="temp_aquario_4">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_4"></div>
+
                 </div>
+
+                
+                
 
             </div>
 
@@ -136,8 +165,8 @@
         setTimeout(atualizacaoPeriodica, 5000);
     }
 
-    function obterdados(idAquario) {
-        fetch(`/medidas/tempo-real/${idAquario}`)
+    function obterdados(id_sensor) {
+        fetch(`/medidas/tempo-real/${id_sensor}`)
             .then(resposta => {
 
                 if (resposta.ok) {
@@ -149,7 +178,7 @@
                             temperatura: resposta[0].temperatura,
                         }
 
-                        alertar(resposta[0].temperatura, idAquario);
+                        alertar(resposta[0].temperatura, id_sensor);
                     });
                 } else {
 
@@ -162,7 +191,7 @@
 
     }
 
-    function alertar(temperatura, idAquario) {
+    function alertar(temperatura, id_sensor) {
         var limites = {
             muito_quente: 23,
             quente: 22,
@@ -196,16 +225,16 @@
 
         var card;
 
-        if (idAquario == 1) {
+        if (id_sensor == 1) {
             temp_aquario_1.innerHTML = temperatura + "°C";
             card = card_1
-        } else if (idAquario == 2) {
+        } else if (id_sensor == 2) {
             temp_aquario_2.innerHTML = temperatura + "°C";
             card = card_2
-        } else if (idAquario == 3) {
+        } else if (id_sensor == 3) {
             temp_aquario_3.innerHTML = temperatura + "°C";
             card = card_3
-        } else if (idAquario == 4) {
+        } else if (id_sensor == 4) {
             temp_aquario_4.innerHTML = temperatura + "°C";
             card = card_4
         }

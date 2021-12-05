@@ -482,8 +482,7 @@ nav {
       height: 12%;
       position: absolute;
     }
-
-    .quartil_ciano {
+  .quartil_ciano {
       background-color: #010e83;
         display: flex;
         justify-content: center;
@@ -493,7 +492,7 @@ nav {
         position: absolute;
       }
 
-      .quartil_azul {
+   .quartil_azul {
         background-color: #007e77;
           display: flex;
           justify-content: center;
@@ -502,3 +501,167 @@ nav {
           height: 12%;
           position: absolute;
         }
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* pagina mural */
+
+*,
+body {
+  font-family: "Exo 2", sans-serif;
+}
+
+
+
+
+
+
+.regua {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 20%;
+  margin-top: 30px;
+  position: absolute;
+}
+
+.perigo-frio {
+  background-color: #5c6bc0;
+}
+
+.perigo-quente {
+  background-color: #ff7043;
+}
+
+.alerta-frio {
+  background-color: #42a5f5;
+}
+
+.alerta-quente {
+  background-color: #ffee58;
+}
+
+.ideal {
+  background-color: #9ccc65;
+}
+
+.item-regua {
+  padding: 5px;
+  width: 60%;
+  margin: 5px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.cards {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 450px;
+    width: 100%;
+    align-items: center;
+    color: white;
+    position: absolute;
+    left: 7%;
+    top: 42%;
+}
+
+.card {
+  margin: 2%;
+  width: 32%;
+  flex-wrap: wrap;
+  display: flex;
+  text-align: center;
+  height: 230px;
+  justify-content: right;
+  background-color: #212124;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 50px;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.cards h1 {
+  font-size: 22px;
+  width: 100%;
+  border-bottom: solid white 1px;
+  text-align: left;
+  font-weight: lighter;
+  margin: 20px;
+}
+
+.temperatura,
+.umidade {
+  margin: 5px;
+  margin-left: 20px;
+  width: 75%;
+}
+
+.cor-alerta {
+  width: 13%;
+  height: 30%;
+  border-radius: 50px;
+  margin-top: 6%;
+  /* background-color: #c7c7c7; */
+}
+
+.btns-dash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.graph {
+  width: 80%;
+  margin: auto;
+  padding-top: 45px;
+}
+
+.btn-chart {
+  font-family: "Exo 2", sans-serif;
+  border: 0;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: white;
+  background-color: #e6005a;
+  margin: 5px;
+}
