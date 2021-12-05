@@ -268,7 +268,7 @@ select {
   margin: 10px;
   padding: 5px;
   left: 54%;
-  top: 94.1%
+  top: 84.1%;
 }
 
 
@@ -317,8 +317,8 @@ font-weight: 600;
   height: 33vh;
   margin: 10px;
   padding: 5px;
-  left: 23%;
-  top: 94%;
+  left: 24%;
+  top: 84%;
 }
 
 #bem-vindo{
@@ -435,7 +435,7 @@ nav {
   background-color: rgba(255,255,255,0.05);
   position: absolute;
   left: 24%;
-  top: 44%;
+  top: 34%
 }
 
 .quartil {
@@ -601,6 +601,7 @@ body {
   top: 33%;
 }
 
+
 .card {
   margin: 2%;
   width: 20%
@@ -612,6 +613,61 @@ body {
   justify-content: right;
   background-color: #212124;
   font-size: 20px;
+  position: absolute;
+  left: 20%;
+}
+
+
+.card1 {
+  margin: 2%;
+    width: 20% height 50%;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: center;
+    height: 230px;
+    justify-content: right;
+    background-color: #212124;
+    font-size: 20px;
+    position: absolute;
+    left: 55%;
+    top: 54%;
+    width: 21%;
+}
+
+
+.card2 {
+  margin: 2%;
+  width: 20%;
+  flex-wrap: wrap;
+  display: flex;
+  text-align: center;
+  height: 230px;
+  justify-content: left;
+  background-color: #212124;
+  font-size: 20px;
+  position: absolute;
+  left: 55%;
+  top: -9%;
+  width: 21%;
+  height: 51%
+}
+
+.card3 {
+  margin: 2%;
+  width: 20%
+  height 50%;
+  flex-wrap: wrap;
+  display: flex;
+  text-align: center;
+  height: 230px;
+  justify-content: right;
+  background-color: #212124;
+  font-size: 20px;
+  position: absolute;
+  left: 27.9%;
+  top: 55%;
+  width: 20%;
+  height: 50%
 }
 
 .card p {
@@ -623,6 +679,7 @@ body {
 
 .cards h1 {
   font-size: 22px;
+  width: 90%;
   border-bottom: solid white 1px;
   text-align: left;
   font-weight: lighter;
@@ -639,8 +696,9 @@ body {
 .cor-alerta {
   width: 20%;
   height: 50%;
-  margin-left: 15%;
-  margin-top: 6%;
+ position: absolute;
+ left: 30%;
+ top: 0%;
 
   /* background-color: #c7c7c7; */
 }

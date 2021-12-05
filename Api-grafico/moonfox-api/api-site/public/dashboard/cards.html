@@ -79,23 +79,23 @@
             <div class="regua">
                 <div class="item-regua perigo-frio">
                     <h4>Perigo</h4>
-                    <h2>0°C</h2>
+                    <h2>23°C</h2>
                 </div>
                 <div class="item-regua alerta-frio">
                     <h4>Alerta</h4>
-                    <h2>0°C</h2>
+                    <h2>22°C</h2>
                 </div>
                 <div class="item-regua ideal">
                     <h4>Ideal</h4>
-                    <h2>0°C</h2>
+                    <h2>20°C</h2>
                 </div>
                 <div class="item-regua alerta-quente">
                     <h4>Alerta</h4>
-                    <h2>0°C</h2>
+                    <h2>10°C</h2>
                 </div>
                 <div class="item-regua perigo-quente">
                     <h4>Perigo</h4>
-                    <h2>0°C</h2>
+                    <h2>5°C</h2>
                 </div>
             </div>
 
@@ -107,28 +107,28 @@
                     </div>
                     <div class="cor_alerta" ></div>
                 </div>
-                <div class="card" id="card_2">
+                <div class="card1">
                     <h1>3D mark</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_2">-°C</p>
+                        <p>-°C</p>
                     </div>
                     <div class="cor_alerta" ></div>
 
                 </div>
 
-                <div class="card" id="card_3">
+                <div class="card2">
                     <h1>gama-pro</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_3">-°C</p>
+                        <p>-°C</p>
                     </div>
                     <div class="cor_alerta" ></div>
 
                 </div>
 
-                <div class="card" id="card_4">
+                <div class="card3" >
                     <h1>graber i3</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_4">-°C</p>
+                        <p>-°C</p>
                     </div>
                     <div class="cor_alerta" ></div>
 
@@ -162,7 +162,7 @@
         function sendData() {
 			var http = new XMLHttpRequest();
 			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
+		
 		}
 
         setInterval(() => {
@@ -173,12 +173,12 @@
 
     function obterdados(id_sensor) {
         fetch(`/medidas/tempo-real/${id_sensor}`)
+          
             .then(resposta => {
 
                 if (resposta.ok) {
-                    resposta.json().then(resposta => {
-
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.json().then(resposta => {  
+                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
                         var dados = {
                             temperatura: resposta[0].temperatura,
