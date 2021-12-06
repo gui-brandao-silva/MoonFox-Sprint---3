@@ -1,62 +1,58 @@
-create database bd_moonfox;
-use bd_moonfox;
-
--- TAELA'S --
-/* TABELA EMPRESA */
 create table tb_empresa (
-id_empresa int primary key auto_increment,
+id_empresa int primary key identity(10,1),
 nome_empresa varchar(45),
 email_usuario varchar(45),
 senha varchar(45)
 );
 select*from tb_empresa;
 
-/* TABELA FILIAIS */
-create table tb_filiais (
-id_filiais int auto_increment,
-fk_empresa int,
-CEP_filial varchar(45),
-PRIMARY KEY (`id_filiais`, `fk_empresa`),
-foreign key (fk_empresa) references tb_empresa (id_empresa)
-)auto_increment = 20;
-select * from tb_filiais;
+-- TABELA FILIAIS --
 
-/* TABELA IMPRESSORA */
+create table tb_filial (
+id_filial int identity(20,1),
+CEP_filial varchar(45),
+fk_empresa int foreign key references tb_empresa (id_empresa),
+PRIMARY KEY (id_filial, fk_empresa)
+);
+
+	
+select * from tb_filial;
+
+-- TABELA IMPRESSORA --
 create table tb_impressora (
-id_impressora int primary key auto_increment,
+id_impressora int primary key identity(50,1),
 modelo_impressora varchar(45),
 filamento_principal varchar (3),
 check( filamento_principal = 'ABS' or filamento_principal = 'PLA'),
-fk_filiais int,
-foreign key (fk_filiais) references tb_filiais (id_filiais)
-)auto_increment = 30;
+fk_filial int foreign key references tbs_filial (id_filial)
+);
 select * from tb_impressora;
 
-/* TABELA SENSOR */
+-- TABELA SENSOR --
 create table tb_sensor(
-id_sensor int primary key auto_increment,
-fk_impressora int,
-foreign key (fk_impressora) references tb_impressora (id_impressora)
+id_sensor int primary key identity(1,1),
+fk_impressora int foreign key references tb_impressora (id_impressora)
 );
 select * from tb_sensor;
 
+-- TABELA REGISTROS --
 create table tb_registros(
-id_registro int auto_increment,
-fk_sensor int,
+id_registro int identity(70,1),
+fk_sensor int foreign key references tb_sensor (id_sensor),
 primary key (`id_registro`,`fk_sensor`),
-temperatura decimal (10,2),
-foreign key (fk_sensor) references tb_sensor (id_sensor),
-momento datetime
-)auto_increment = 50;
+temperatura_atual decimal (10,2)
+);
 select * from tb_registros;
 
 -- INSERT'S --
+
 -- INSERT'S EMPRESA--
 insert into tb_empresa(nome_empresa,email_usuario,senha) values 
 ('MoonFox','pao@gmail.com',1234),
 ('HiverDimencion3','HiverDimencion3@gmail.com',1234),
 ('Das3D','Das3D@gmail.com',12345),
 ('NewModel3D','NewModel3D@gmail.com',12346);
+
 
 -- INSERT'S FILIAIS --
 insert into  tb_filiais(fk_empresa,CEP_filial) values
@@ -83,5 +79,3 @@ insert into tb_sensor(fk_impressora) values
 insert into tb_registros(fk_sensor,temperatura,momento) values 
 (1,22.91,'2021-12-04 23:38:49'),
 (2,5.50,'2021-12-04 23:38:49');
-(2,5.50,'2021-12-04 23:38:49');
-

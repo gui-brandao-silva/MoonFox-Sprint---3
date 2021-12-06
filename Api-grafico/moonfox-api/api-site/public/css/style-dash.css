@@ -561,19 +561,19 @@ body {
 }
 
 .perigo-frio {
-  background-color: #061fac;
+  background-color: #fa0000;  
 }
 
 .perigo-quente {
-  background-color: #fa0000;
+  background-color: #061fac;
 }
 
 .alerta-frio {
-  background-color: #8fc2ec;
+  background-color: #bead11;  
 }
 
 .alerta-quente {
-  background-color: #bead11;
+  background-color: #8fc2ec;
 }
 
 .ideal {

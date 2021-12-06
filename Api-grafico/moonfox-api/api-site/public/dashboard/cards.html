@@ -35,11 +35,11 @@
                             <header>
                                 <nav class="menu">
                                     <ul>
-                                        <li><a href="./index.html">Inicio</a></li>
-                                        <li>|</li>
-                                        <li><a href="./simulador.html">Simulador</a></li>
-                                        <li><a href="./login.html">Login</a></li>
-                                        <li><a href="./cadastro.html">Cadastro</a></li><br>
+                                <li><a href="http://localhost:3333/index.html">Inicio</a></li>
+                                <li>|</li>
+                                <li><a href="http://localhost:3333/simulador.html">Simulador</a></li>
+                                <li><a href="http://localhost:3333/login.html">Login</a></li>
+                                <li><a href="http://localhost:3333/cadastro.html">Cadastro</a></li><br>
                                     </ul>
                                 </nav>
                             </header>
@@ -47,7 +47,8 @@
                 </ul>
             </div>
         </div>
-        
+       
+       
         
         
         
@@ -56,10 +57,10 @@
          
                 <ul>
                     <li><a href="./dashboard.html">Ender I3</a></li>
-                    <li><a href="./dashboard.HTML">Gama Pro</a></li>
-                    <li><a href="./dashboard.HTML">Gama Pro MK2</a></li>
-                    <li><a href="./dashboard.HTML">Graber I3</a></li>
-                    <li><a href="./cadastro_impressora.html">Adicione impressora</a></li>
+                    <li><a href="./dash_desativado.html">Gama Pro</a></li>
+                    <li><a href="./dash_desativado.html">Gama Pro MK2</a></li>
+                    <li><a href="./dash_desativado.html">Graber I3</a></li>
+                    <li><a href="./dash_desativado.html">Adicione impressora</a></li>
                 </ul>
             </nav>
         </header>
@@ -209,11 +210,11 @@
         var classe_temperatura = 'cor-alerta';
 
         if (temperatura >= limites.muito_quente) {
-            classe_temperatura = 'cor-alerta perigo-quente';
+            classe_temperatura = 'cor-alerta perigo-frio';
             console.log("caiu no 1")
         }
         else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
-            classe_temperatura = 'cor-alerta alerta-quente';
+            classe_temperatura = 'cor-alerta alerta-frio';
             console.log("caiu no 2")
         }
         else if (temperatura < limites.quente && temperatura > limites.frio) {
@@ -221,11 +222,13 @@
             console.log("caiu no 3")
         }
         else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
-            classe_temperatura = 'cor-alerta alerta-frio';
+            classe_temperatura = 'cor-alerta alerta-quente';
+      
             console.log("caiu no 4")
         }
         else if (temperatura < limites.min_temperatura) {
-            classe_temperatura = 'cor-alerta perigo-frio';
+            classe_temperatura = 'cor-alerta perigo-quente';
+    
             console.log("caiu no 5")
         }
 
