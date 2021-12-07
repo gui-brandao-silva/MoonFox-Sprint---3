@@ -26,7 +26,7 @@
 <div class="header">
     <div class="container">
         <a href="./index.html">
-            <img style="height: 140px; margin:3px;" src="../assets/imgs/MoonFox VersÃ£o v4 branca.png" >
+            <img style="height: 140px; margin:3px;" src="../assets/imgs/MoonFox Versão v4 branca.png" >
         </a>
              <div class="navbar"></div>
                 <ul class="navbar">
@@ -69,7 +69,7 @@
 
 
     
-    <div class="grif" id="alertas">
+    <div class="grif">
         
        
     </div>
@@ -95,28 +95,8 @@
 </html>
 
 <script>
-  
- setInterval(function(){
-    fetch("http://localhost:3333/alertas/listar").then(function(resposta){
 
-if (resposta.ok == true){
-resposta.json().then(function(json){
-    console.log(json)
-    alertas.innerHTML = ""
-    for (let index = 0; index < json.length; index++) {
-        const element = json[index];
-        alertas.innerHTML += `
-        <p>${element.temperatura}Â°C -${new Date(element.momento).toLocaleDateString("pt-br",{
-            day:"2-digit",month:"2-digit",year:"2-digit",hour:"numeric",minute:"2-digit"
-        })}</p>
-        `;
-    }
-})
 
-}
-})
-
- },2000)
   
 var pico = (Math.random()*4 +  28 ).toFixed(1);
         var ideal = (Math.random()*4 + 20 ).toFixed(1);
@@ -136,7 +116,7 @@ var ctx = document.getElementById('myChart2bar2').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ['Tempo de impressÃ£o restante', 'Tempo imprimindo'],
+        labels: ['Tempo de impressão restante', 'Tempo imprimindo'],
         datasets: [{
             label: 'genero musical',
             data: [aleatorio, aleatorio2],
@@ -172,8 +152,8 @@ var myChart = new Chart(ctx, {
 
     //verificar_autenticacao();
 
-    // altere aqui como os dados serÃ£o exibidos
-    // e como sÃ£o recuperados do BackEnd
+    // altere aqui como os dados serão exibidos
+    // e como são recuperados do BackEnd
     function obterDadosGrafico(id_sensor) {
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
@@ -192,14 +172,14 @@ var myChart = new Chart(ctx, {
             }
         })
             .catch(function (error) {
-                console.error(`Erro na obtenÃ§Ã£o dos dados p/ grÃ¡fico: ${error.message}`);
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
 
     }
 
-    // sÃ³ altere aqui se souber o que estÃ¡ fazendo!
+    // só altere aqui se souber o que está fazendo!
     function plotarGrafico(resposta, id_sensor) {
-        console.log('iniciando plotagem do grÃ¡fico...');
+        console.log('iniciando plotagem do gráfico...');
 
         var dados = {
             labels: [],
@@ -216,7 +196,7 @@ var myChart = new Chart(ctx, {
                     yAxisID: 'y-temperatura',
                     label: 'Temperatura',
                     borderColor: '#fff',
-                    backgroundColor: '#FF5100',
+                    backgroundColor: '#fff',
                     fill: true,
                     data: []
                 }
@@ -235,7 +215,7 @@ var myChart = new Chart(ctx, {
         var ctx = canvas_grafico.getContext('2d');
         window.grafico_linha = Chart.Line(ctx, {
             data: dados,
-            //ConfiguraÃ§Ãµes do grÃ¡fico
+            //Configurações do gráfico
             options: {
                 responsive: true,
                 animation: { duration: 500 },
@@ -243,7 +223,7 @@ var myChart = new Chart(ctx, {
                 stacked: false,
                 title: {
                     display: true,
-                    text: 'HistÃ³rico recente de temperatura'
+                    text: 'Histórico recente de temperatura'
                 },
                 scales: {
                     yAxes: [{
@@ -289,8 +269,8 @@ var myChart = new Chart(ctx, {
         setTimeout(() => atualizarGrafico(id_sensor, dados), 2000);
     }
 
-    // sÃ³ mexer se quiser alterar o tempo de atualizaÃ§Ã£o
-    // ou se souber o que estÃ¡ fazendo!
+    // só mexer se quiser alterar o tempo de atualização
+    // ou se souber o que está fazendo!
     function atualizarGrafico(id_sensor, dados) {
 
         fetch(`/medidas/tempo-real/${id_sensor}`, { cache: 'no-store' }).then(function (response) {
@@ -298,9 +278,34 @@ var myChart = new Chart(ctx, {
                 response.json().then(function (novoRegistro) {
 
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                    console.log(`Dados atuais do grÃ¡fico: ${dados}`);
+                    console.log(`Dados atuais do gráfico: ${dados}`);
 
-                    // tirando e colocando valores no grÃ¡fico
+                        if (novoRegistro[0].temperatura >= 35 ) {
+
+                        dados.datasets[1].backgroundColor = '#ff0000'
+
+                        }
+                        else if (novoRegistro[0].temperatura >= 28 ) {
+
+                        dados.datasets[1].backgroundColor = '#f1c40f'
+
+                        }
+                        else if (novoRegistro[0].temperatura >= 23 ) {
+
+                        dados.datasets[1].backgroundColor = '#2ecc71'
+
+                        }
+                        else if (novoRegistro[0].temperatura >= 23 ) {
+
+                        dados.datasets[1].backgroundColor = '#3498db'
+
+                        }
+                        else{
+                        dados.datasets[1].backgroundColor = '#2980b9'
+                        }
+
+
+                    // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
                     dados.datasets[0].data.shift();  // apagar o primeiro de umidade
@@ -310,6 +315,7 @@ var myChart = new Chart(ctx, {
 
                     window.grafico_linha.update();
 
+                 
                     proximaAtualizacao = setTimeout(() => atualizarGrafico(id_sensor, dados), 2000);
                 });
             } else {
@@ -318,11 +324,11 @@ var myChart = new Chart(ctx, {
             }
         })
             .catch(function (error) {
-                console.error(`Erro na obtenÃ§Ã£o dos dados p/ grÃ¡fico: ${error.message}`);
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
 
     }
 
-  
+
   
 </script>

@@ -731,3 +731,9 @@ body {
 .voltar{
   background-color: #FF5100;
 }
+
+
+#alertas p {
+text-align:center;
+color:white;
+}

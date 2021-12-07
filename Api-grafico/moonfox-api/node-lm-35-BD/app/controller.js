@@ -26,10 +26,11 @@ router.post('/sendData', (request, response) => {
     let values = [1,temperatura,data_agora];
 
     db.query(sql, [values,data_agora,1], function(err, result){
-        if(err) throw err;
+        if(err) {  response.sendStatus(500);};
+
         console.log("Medidas inseridas: " + result.affectedRows)
     });
-    response.sendStatus(500);
+    response.sendStatus(200);
 });
 
 
