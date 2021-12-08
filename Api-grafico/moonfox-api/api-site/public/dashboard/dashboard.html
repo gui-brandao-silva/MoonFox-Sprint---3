@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Dashboards</title>
+    <title></title>
 
     <link rel="stylesheet" href="../css/style-dash.css">
     <script src="../js/funcoes.js"></script>
@@ -70,6 +70,7 @@
 
     
     <div class="grif" id="alertas">
+       
         
        
     </div>
@@ -84,7 +85,29 @@
     
 </div>
 
+<div class="regua2">
+    <div class="item-regua perigo-frio">
+        <h4>Perigo</h4>
+        <h2>33°C</h2>
+    </div>
+    <div class="item-regua alerta-frio">
+        <h4>Alerta</h4>
+        <h2>29°C</h2>
+    </div>
+    <div class="item-regua ideal">
+        <h4>Ideal</h4>
+        <h2>21°C</h2>
+    </div>
+    <div class="item-regua alerta-quente">
+        <h4>Alerta</h4>
+        <h2>20°C</h2>
+    </div>
+    <div class="item-regua perigo-quente">
+        <h4>Perigo</h4>
+        <h2>16°C</h2>
+    </div>
 </div>
+
 
    
        
@@ -105,11 +128,48 @@ resposta.json().then(function(json){
     alertas.innerHTML = ""
     for (let index = 0; index < json.length; index++) {
         const element = json[index];
-        alertas.innerHTML += `
-        <p>${element.temperatura}°C -${new Date(element.momento).toLocaleDateString("pt-br",{
+        if (Number(element.temperatura) >= 33 ) {
+
+            alertas.innerHTML += `
+        <p  style="color: #ff0000;"  >${element.temperatura}°C -${new Date(element.momento).toLocaleDateString("pt-br",{
             day:"2-digit",month:"2-digit",year:"2-digit",hour:"numeric",minute:"2-digit"
         })}</p>
-        `;
+        `     
+        }
+        else if(Number(element.temperatura) >= 29 ) {
+            alertas.innerHTML += `
+        <p  style="color:#f1c40f;"  >${element.temperatura}°C -${new Date(element.momento).toLocaleDateString("pt-br",{
+            day:"2-digit",month:"2-digit",year:"2-digit",hour:"numeric",minute:"2-digit"
+        })}</p>
+        `
+        }
+
+        else if(Number(element.temperatura) >= 21 ) {
+            alertas.innerHTML += `
+        <p  style="color:#2ecc71;"  >${element.temperatura}°C -${new Date(element.momento).toLocaleDateString("pt-br",{
+            day:"2-digit",month:"2-digit",year:"2-digit",hour:"numeric",minute:"2-digit"
+        })}</p>
+        `
+        }
+
+         else if(Number(element.temperatura) >= 17  ) {
+            alertas.innerHTML += `
+        <p  style="color:#3498db;"  >${element.temperatura}°C -${new Date(element.momento).toLocaleDateString("pt-br",{
+            day:"2-digit",month:"2-digit",year:"2-digit",hour:"numeric",minute:"2-digit"
+        })}</p>
+        `
+        }else{
+
+            alertas.innerHTML += `
+        <p  style="color:#add8e6;"  >${element.temperatura}°C -${new Date(element.momento).toLocaleDateString("pt-br",{
+            day:"2-digit",month:"2-digit",year:"2-digit",hour:"numeric",minute:"2-digit"
+        })}</p>
+        `
+
+        }
+
+
+      ;
     }
 })
 
@@ -299,6 +359,32 @@ var myChart = new Chart(ctx, {
 
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
                     console.log(`Dados atuais do gráfico: ${dados}`);
+
+
+                        if (novoRegistro[0].temperatura >= 33 ) {
+
+                        dados.datasets[1].backgroundColor = '#ff0000'
+
+                        }
+                        else if (novoRegistro[0].temperatura >= 29 ) {
+
+                        dados.datasets[1].backgroundColor = '#f1c40f'
+
+                        }
+                        else if (novoRegistro[0].temperatura >= 20 ) {
+
+                        dados.datasets[1].backgroundColor = '#2ecc71'
+
+                        }
+                        else if (novoRegistro[0].temperatura <= 20 ) {
+
+                        dados.datasets[1].backgroundColor = '#3498db'
+
+                        }
+                        else{
+                        dados.datasets[1].backgroundColor = '#fafd'
+                        }
+
 
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro

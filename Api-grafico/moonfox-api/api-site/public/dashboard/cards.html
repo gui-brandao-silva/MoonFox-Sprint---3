@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+ 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Tempo Real</title>
+
 
     <link rel="stylesheet" href="../css/style-dash.css">
     
@@ -80,23 +80,23 @@
             <div class="regua">
                 <div class="item-regua perigo-frio">
                     <h4>Perigo</h4>
-                    <h2>23°C</h2>
+                    <h2>33°C</h2>
                 </div>
                 <div class="item-regua alerta-frio">
                     <h4>Alerta</h4>
-                    <h2>22°C</h2>
+                    <h2>29°C</h2>
                 </div>
                 <div class="item-regua ideal">
                     <h4>Ideal</h4>
-                    <h2>20°C</h2>
+                    <h2>21°C</h2>
                 </div>
                 <div class="item-regua alerta-quente">
                     <h4>Alerta</h4>
-                    <h2>10°C</h2>
+                    <h2>20°C</h2>
                 </div>
                 <div class="item-regua perigo-quente">
                     <h4>Perigo</h4>
-                    <h2>5°C</h2>
+                    <h2>16°C</h2>
                 </div>
             </div>
 
@@ -150,7 +150,7 @@
 
     function atualizacaoPeriodica() {
 
-    var nomeUsuario = sessionStorage.getItem('carlos')
+    var nomeUsuario = sessionStorage.getItem('nome')
 
 
         b_usuario.innerHTML = `${nomeUsuario}`
@@ -200,11 +200,11 @@
 
     function alertar(temperatura, id_sensor) {
         var limites = {
-            muito_quente: 23,
-            quente: 22,
-            ideal: 20,
-            frio: 10,
-            muito_frio: 5
+            muito_quente: 33,
+            quente: 29,
+            ideal: 21,
+            frio: 20,
+            muito_frio: 16
         };
 
         var classe_temperatura = 'cor-alerta';

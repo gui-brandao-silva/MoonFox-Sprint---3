@@ -268,7 +268,7 @@ select {
   margin: 10px;
   padding: 5px;
   left: 54%;
-  top: 84.1%;
+  top: 87.1%;
 }
 
 
@@ -318,7 +318,7 @@ font-weight: 600;
   margin: 10px;
   padding: 5px;
   left: 24%;
-  top: 84%;
+  top: 87%;
 }
 
 #bem-vindo{
@@ -455,7 +455,7 @@ nav {
 }
 
 .quartil_vermelho {
-  background-color: #850508;
+  background-color:  #ff0000;
     display: flex;
     justify-content: center;
     margin-top: 32px;
@@ -465,7 +465,7 @@ nav {
 }
 
 .quartil_amarelo {
-  background-color: #b4b105;
+  background-color: #f1c40f;
     display: flex;
     justify-content: center;
     margin-top: 116px;
@@ -475,7 +475,7 @@ nav {
   }
 
   .quartil_verde {
-    background-color: #118f00;
+    background-color: #2ecc71;
       display: flex;
       justify-content: center;
       margin-top: 200px;
@@ -484,7 +484,7 @@ nav {
       position: absolute;
     }
   .quartil_ciano {
-      background-color: #010e83;
+      background-color: #3498db;
         display: flex;
         justify-content: center;
         margin-top: 285px;
@@ -494,7 +494,7 @@ nav {
       }
 
    .quartil_azul {
-        background-color: #007e77;
+        background-color: #add8e6;
           display: flex;
           justify-content: center;
           margin-top: 370px;
@@ -560,24 +560,34 @@ body {
     left: 7%;
 }
 
+.regua2 {
+  display: flex;
+flex-wrap: wrap;
+justify-content: center;
+width: 15%;
+margin-top: 150px;
+position: absolute;
+left: 7%;
+}
+
 .perigo-frio {
   background-color: #fa0000;  
 }
 
 .perigo-quente {
-  background-color: #061fac;
+  background-color: #add8e6;
 }
 
 .alerta-frio {
-  background-color: #bead11;  
+  background-color: #f1c40f;  
 }
 
 .alerta-quente {
-  background-color: #8fc2ec;
+  background-color: #3498bc;
 }
 
 .ideal {
-  background-color: #9ccc65;
+  background-color: #2ecc71;
 }
 
 .item-regua {
@@ -595,10 +605,12 @@ body {
   height: 450px;
   width: 100%;
   align-items: center;
-  color: white;
+  color: rgb(0, 0, 0);
   position: absolute;
   left: -2%;
   top: 33%;
+  font-weight: bolder;
+  font-size: 30px;
 }
 
 
@@ -673,16 +685,17 @@ body {
 .card p {
   margin: 0;
   font-size: 50px;
-  font-weight: lighter;
-  text-align: left;
+  font-weight: bold;
+  color: black;
+  font-size: 40px;
 }
 
 .cards h1 {
   font-size: 22px;
   width: 90%;
-  border-bottom: solid white 1px;
+  border-bottom: solid rgb(0, 0, 0) 1px;
   text-align: left;
-  font-weight: lighter;
+color: #000;
   margin: 20px;
 }
 
@@ -735,5 +748,5 @@ body {
 
 #alertas p {
 text-align:center;
-color:white;
+
 }
