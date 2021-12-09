@@ -14,6 +14,20 @@ body {
     margin: 0 auto;
   }
   
+
+  .div_suporte h1{
+    top: 362%;
+    left: 81.7%;
+    position: absolute;
+  }
+  #img_suporte{
+    position: absolute;
+    width: 150px;
+ 
+    left: 80%;
+    top: 355%;
+  }
+
   .header {
   color: white;
   border-bottom: 2.5px solid #FF5100;
