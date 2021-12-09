@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoonFox || DashBoard</title>
-    <link rel="shortcut icon" href="./assets/imgs/logo_redondo.png" type="./assests/image/">
+    <link rel="shortcut icon" href="../assets/imgs/logo_redondo.png" type="./assests/image/">
     <link rel="stylesheet" href="../css/style-dash.css">
     <script src="../js/funcoes.js"></script>
 
@@ -52,13 +52,12 @@
 
 <header>
     <nav class="menu">
-        <h2>Paulozao</h2>
         <ul>
             <li><a href="./dashboard.HTML">Ender I3</a></li>
-            <li><a href="./dashboard.HTML">Gama Pro</a></li>
-            <li><a href="./dashboard.HTML">Gama Pro MK2</a></li>
-            <li><a href="./dashboard.HTML">Graber I3</a></li>
-            <li><a href="./cadastro_impressora.html">Adicione impressora</a></li>
+            <li><a href="./dash_desativado.html">Gama Pro</a></li>
+            <li><a href="./dash_desativado.html">Gama Pro MK2</a></li>
+            <li><a href="./dash_desativado.html">Graber I3</a></li>
+            <li><a href="https://app.pipefy.com/public/form/HPqH-nQs">Adicione impressora</a></li>
             <li><a class="voltar" href="./cards.html">Voltar</a></li>
         </ul>
     </nav>
@@ -67,12 +66,11 @@
 
 <div class="dash-container">
 
-
-    
+    <h1 style="color: #FF5100;">Ender I3</h1>
+    <h1 class="titulo_graf">Progressão de Impressão</h1>
+    <h1 class="titulo_grif">Ultimos Registros</h1>
     <div class="grif" id="alertas">
-       
-        
-       
+     
     </div>
     <div class="graf">
         <canvas id="myChart2bar2" width="0.5" height="0.5"></canvas>
@@ -86,26 +84,26 @@
 </div>
 
 <div class="regua2">
-    <div class="item-regua perigo-frio">
-        <h4>Perigo</h4>
-        <h2>33°C</h2>
-    </div>
-    <div class="item-regua alerta-frio">
-        <h4>Alerta</h4>
-        <h2>29°C</h2>
-    </div>
-    <div class="item-regua ideal">
-        <h4>Ideal</h4>
-        <h2>21°C</h2>
-    </div>
-    <div class="item-regua alerta-quente">
-        <h4>Alerta</h4>
-        <h2>20°C</h2>
-    </div>
-    <div class="item-regua perigo-quente">
-        <h4>Perigo</h4>
-        <h2>16°C</h2>
-    </div>
+            <div class="item-regua perigo-frio">
+                <h4>Perigo</h4>
+                <h2>35°C</h2>
+            </div>
+            <div class="item-regua alerta-frio">
+                <h4>Alerta</h4>
+                <h2>31°C</h2>
+            </div>
+            <div class="item-regua ideal">
+                <h4>Ideal</h4>
+                <h2>24°C</h2>
+            </div>
+            <div class="item-regua alerta-quente">
+                <h4>Alerta</h4>
+                <h2>20°C</h2>
+            </div>
+            <div class="item-regua perigo-quente">
+                <h4>Perigo</h4>
+                <h2>16°C</h2>
+            </div>
 </div>
 
 
@@ -128,7 +126,7 @@ resposta.json().then(function(json){
     alertas.innerHTML = ""
     for (let index = 0; index < json.length; index++) {
         const element = json[index];
-        if (Number(element.temperatura) >= 33 ) {
+        if (Number(element.temperatura) >= 35 ) {
 
             alertas.innerHTML += `
         <p  style="color: #ff0000;"  >${element.temperatura}°C -${new Date(element.momento).toLocaleDateString("pt-br",{
@@ -136,7 +134,7 @@ resposta.json().then(function(json){
         })}</p>
         `     
         }
-        else if(Number(element.temperatura) >= 29 ) {
+        else if(Number(element.temperatura) >= 30.99 ) {
             alertas.innerHTML += `
         <p  style="color:#f1c40f;"  >${element.temperatura}°C -${new Date(element.momento).toLocaleDateString("pt-br",{
             day:"2-digit",month:"2-digit",year:"2-digit",hour:"numeric",minute:"2-digit"
@@ -144,7 +142,7 @@ resposta.json().then(function(json){
         `
         }
 
-        else if(Number(element.temperatura) >= 21 ) {
+        else if(Number(element.temperatura) > 20.99 ) {
             alertas.innerHTML += `
         <p  style="color:#2ecc71;"  >${element.temperatura}°C -${new Date(element.momento).toLocaleDateString("pt-br",{
             day:"2-digit",month:"2-digit",year:"2-digit",hour:"numeric",minute:"2-digit"
@@ -152,7 +150,7 @@ resposta.json().then(function(json){
         `
         }
 
-         else if(Number(element.temperatura) >= 17  ) {
+         else if(Number(element.temperatura) > 16 ) {
             alertas.innerHTML += `
         <p  style="color:#3498db;"  >${element.temperatura}°C -${new Date(element.momento).toLocaleDateString("pt-br",{
             day:"2-digit",month:"2-digit",year:"2-digit",hour:"numeric",minute:"2-digit"

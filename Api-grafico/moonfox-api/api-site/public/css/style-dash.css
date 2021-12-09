@@ -264,11 +264,11 @@ select {
   position: absolute;
   background-color: rgba(255,255,255,0.05);
   width: 23.6%;
-  height: 33vh;
+  height: 38vh;
   margin: 10px;
   padding: 5px;
   left: 54%;
-  top: 87.1%;
+  top: 90.1%
 }
 
 
@@ -314,11 +314,11 @@ font-weight: 600;
   position: absolute;
   background-color: rgba(255,255,255,0.05);
   width: 29%;
-  height: 33vh;
+  height: 38vh;
   margin: 10px;
   padding: 5px;
   left: 24%;
-  top: 87%;
+  top: 90.1%
 }
 
 #bem-vindo{
@@ -749,4 +749,18 @@ color: #000;
 #alertas p {
 text-align:center;
 
+}
+
+.titulo_graf {
+  position: absolute;
+  top: 84.1%;
+  left: 57.5%;
+  color: #FF5100;
+}
+
+.titulo_grif {
+  position: absolute;
+  top: 84.1%;
+  left: 32.5%;
+  color: #FF5100;
 }

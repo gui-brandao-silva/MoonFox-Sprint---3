@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoonFox || Metricas</title>
-    <link rel="shortcut icon" href="./assets/imgs/logo_redondo.png" type="./assests/image/">
+    <link rel="shortcut icon" href="../assets/imgs/logo_redondo.png" type="./assests/image/">
     <link rel="stylesheet" href="../css/style-dash.css">
     
 
@@ -60,7 +60,7 @@
                     <li><a href="./dash_desativado.html">Gama Pro</a></li>
                     <li><a href="./dash_desativado.html">Gama Pro MK2</a></li>
                     <li><a href="./dash_desativado.html">Graber I3</a></li>
-                    <li><a href="./dash_desativado.html">Adicione impressora</a></li>
+                    <li><a href="https://app.pipefy.com/public/form/HPqH-nQs">Adicione impressora</a></li>
                 </ul>
             </nav>
         </header>
@@ -80,15 +80,15 @@
             <div class="regua">
                 <div class="item-regua perigo-frio">
                     <h4>Perigo</h4>
-                    <h2>33°C</h2>
+                    <h2>35°C</h2>
                 </div>
                 <div class="item-regua alerta-frio">
                     <h4>Alerta</h4>
-                    <h2>29°C</h2>
+                    <h2>31°C</h2>
                 </div>
                 <div class="item-regua ideal">
                     <h4>Ideal</h4>
-                    <h2>21°C</h2>
+                    <h2>24°C</h2>
                 </div>
                 <div class="item-regua alerta-quente">
                     <h4>Alerta</h4>
@@ -146,6 +146,9 @@
 
 </body>
 
+</html>
+
+
 <script>
 
     function atualizacaoPeriodica() {
@@ -200,9 +203,9 @@
 
     function alertar(temperatura, id_sensor) {
         var limites = {
-            muito_quente: 33,
-            quente: 29,
-            ideal: 21,
+            muito_quente: 35,
+            quente: 31,
+            ideal: 24,
             frio: 20,
             muito_frio: 16
         };
@@ -256,5 +259,3 @@
    console.log(resposta)
     })
 </script>
-
-</html>
